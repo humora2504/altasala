@@ -289,6 +289,115 @@ footer .wrap{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
 .modal input{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px;font:inherit;font-size:16px;margin-top:14px}
 
 /* ===== v6: bandeja de currículums y motor ===== */
+.player{margin:40px auto 0;background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:0 40px 80px -50px rgba(0,0,0,.35);overflow:hidden;text-align:left;max-width:1100px}
+.player .chrome{grid-column:auto}
+.pbar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-bottom:1px solid var(--line);background:#fff;flex-wrap:wrap}
+.seg{display:flex;align-items:center;gap:8px;border:0;background:transparent;border-radius:999px;padding:8px 12px;font-size:14px;color:var(--fg3);font-weight:600;position:relative}
+.seg b{width:22px;height:22px;border-radius:50%;background:var(--sunk);display:grid;place-items:center;font-size:12px;color:var(--fg2)}
+.seg i{position:absolute;left:12px;right:12px;bottom:2px;height:3px;border-radius:99px;background:var(--line)}
+.seg.on{color:var(--fg)}.seg.on b{background:var(--ink);color:#fff}.seg.on i{background:var(--ok)}.seg.done b{background:var(--ok);color:#fff}
+.pctl{margin-left:auto;display:flex;gap:6px}.pctl button{border:1px solid var(--line2);background:#fff;border-radius:999px;padding:6px 12px;font-size:13px}
+.stages{position:relative;min-height:520px;background:var(--sunk)}
+.stg{display:none;padding:28px;animation:fade .5s}.stg.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* pantalla 0: cómo funciona */
+.flow{display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr 28px 1fr;gap:6px;align-items:start;padding:10px 0 6px}
+@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}.fa{display:none}}
+.fs{text-align:center;opacity:.3;transform:translateY(6px);transition:all .5s}.fs.on{opacity:1;transform:none}
+.fico{width:96px;height:96px;border-radius:28px;background:#fff;border:1px solid var(--line);margin:0 auto 14px;display:grid;place-items:center;position:relative;transition:all .5s}.fs.on .fico{border-color:var(--ok);box-shadow:0 20px 40px -24px rgba(31,122,76,.5)}
+.fico svg{width:52px;height:52px;color:var(--fg)}.fico .fn{position:absolute;right:-8px;top:-8px;background:var(--bad);color:#fff;border-radius:999px;padding:3px 9px;font-size:13px;font-weight:700}
+.fs b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.1}.fs s{text-decoration:none;display:block;color:var(--fg2);font-size:13.5px;margin-top:6px;line-height:1.35}
+.fa{height:2px;background:var(--line2);margin-top:47px;position:relative;overflow:hidden}.fa::after{content:"";position:absolute;inset:0;background:var(--ok);transform:translateX(-100%);transition:transform .6s}.fa.on::after{transform:none}
+.fcta{text-align:center;margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:10px}.fcta .btn b{font-weight:700}.fcta .small{color:var(--fg3);font-size:13px}
+/* pantalla 1: oferta */
+.recv{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px}
+.oadj2{margin-top:14px}.oadj2 summary{cursor:pointer;font-size:14px;color:var(--fg2);list-style:none;display:inline-flex;gap:8px;align-items:center}.oadj2 summary::before{content:"⚙";font-size:14px}.oadj2 .oadj{margin-top:12px}
+/* pantalla 2: revisión uno a uno */
+.rev{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:22px;align-items:start}
+@media(max-width:900px){.rev{grid-template-columns:1fr}}
+.rcount{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}.rcount div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;text-align:center}.rcount b{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1;display:block;font-variant-numeric:tabular-nums}.rcount s{text-decoration:none;font-size:12px;color:var(--fg3)}.rcount .g b{color:var(--ok)}.rcount .r b{color:var(--bad)}
+.ticker{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 10px;height:380px;overflow:hidden;position:relative;mask-image:linear-gradient(180deg,#000 80%,transparent)}
+.tk{display:flex;align-items:center;gap:10px;font-size:13px;padding:6px 2px;border-bottom:1px dashed var(--line);animation:tkin .3s}
+@keyframes tkin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.tk .id{font-variant-numeric:tabular-nums;color:var(--fg3);width:46px;flex:none}.tk .st{width:9px;height:9px;border-radius:50%;flex:none}.tk.ok .st{background:var(--ok)}.tk.no .st{background:var(--bad)}.tk .why{color:var(--fg2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tk.ok .why b{color:var(--ok)}.tk.no .why b{color:var(--bad)}
+.rpaper{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;font-size:13.5px;line-height:1.5;position:relative;min-height:200px;box-shadow:0 30px 60px -40px rgba(0,0,0,.3);transition:transform .5s,opacity .5s}
+.rpaper.out-no{transform:translateX(-60px) rotate(-3deg);opacity:0}.rpaper.out-ok{transform:translateX(60px) rotate(3deg);opacity:0}
+.rpaper h4{margin:0;font-size:22px;font-family:var(--sans);font-weight:700}.rpaper .mt2{color:var(--fg2);margin:2px 0 10px;font-size:13px}
+.rpaper p{margin:0 0 2px}.rpaper .sec{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg3);font-weight:700;margin:10px 0 2px}
+.rpaper mark{background:transparent;border-radius:4px;padding:1px 4px;transition:background .3s}.rpaper mark.ok{background:var(--ok-soft)}.rpaper mark.w{background:var(--warn-soft)}.rpaper mark.b{background:var(--bad-soft)}
+.verdict{position:absolute;right:16px;top:16px;border:3px solid;border-radius:8px;padding:5px 12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:14px;transform:rotate(-8deg) scale(1.6);opacity:0;transition:all .35s}
+.verdict.on{opacity:1;transform:rotate(-8deg) scale(1)}.verdict.ok{color:var(--ok);border-color:var(--ok)}.verdict.no{color:var(--bad);border-color:var(--bad)}
+.rchecks{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.rc{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:13.5px;opacity:0;transform:translateX(8px);transition:all .3s}
+.rc.on{opacity:1;transform:none}.rc .ic{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;background:var(--ok)}.rc.w .ic{background:var(--warn)}.rc.b .ic{background:var(--bad)}.rc.p .ic{background:var(--fg3)}
+.rc b{font-weight:600}.rc s{text-decoration:none;color:var(--fg2);font-size:12.5px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rc small{color:var(--fg3);font-size:11.5px;white-space:nowrap}
+/* pantalla 3: cinco fichas */
+.cards.five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:1000px){.cards.five{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cards.five{grid-template-columns:1fr}}
+.cards.five .card .av{aspect-ratio:16/8;font-size:38px}.cards.five .card .via{display:none}.cards.five .vbadge{font-size:11.5px}.cards.five .card .nm{font-size:15px}.cards.five .rows .rt{font-size:12px}
+.why5{background:var(--ok-soft);border-radius:10px;padding:8px 10px;font-size:12.5px;color:var(--fg);line-height:1.35;margin-top:4px}.why5 b{color:var(--ok)}
+/* pantalla 4: llamadas */
+.calls{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:22px;align-items:start}
+@media(max-width:900px){.calls{grid-template-columns:1fr}}
+.clist{display:flex;flex-direction:column;gap:8px}
+.cl{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px;transition:all .3s}
+.cl.now{border-color:var(--ok);box-shadow:0 0 0 3px var(--ok-soft)}
+.cl .avs{width:44px;height:44px;border-radius:50%;background:var(--sunk);display:grid;place-items:center;font-family:var(--serif);font-size:16px}
+.cl b{display:block;font-size:14.5px}.cl s{text-decoration:none;font-size:12.5px;color:var(--fg2);display:block}
+.cl .res{font-size:12.5px;font-weight:700;border-radius:999px;padding:5px 10px;background:var(--sunk);color:var(--fg3);white-space:nowrap}.cl .res.ok{background:var(--ok-soft);color:var(--ok)}.cl .res.no{background:var(--bad-soft);color:var(--bad)}.cl .res.w{background:var(--warn-soft);color:var(--warn)}.cl .res.ring{background:var(--ink);color:#fff;animation:pulse 1.2s infinite}
+.cl button{border:1px solid var(--line2);background:#fff;border-radius:999px;padding:6px 11px;font-size:12.5px;font-weight:600}
+.cphone .phone{width:min(320px,100%);margin:0 auto}
+.csc{position:absolute;inset:0;background:linear-gradient(180deg,#1b1b1b,#2a2a2a);color:#fff;padding:52px 16px 16px;display:flex;flex-direction:column;gap:10px;font-size:13px}
+.csc .top{text-align:center}.csc .top .avs{width:70px;height:70px;border-radius:50%;background:#333;display:grid;place-items:center;font-family:var(--serif);font-size:26px;margin:0 auto 8px;border:3px solid rgba(255,255,255,.2)}
+.csc .top b{display:block;font-size:18px}.csc .top s{text-decoration:none;color:#aaa;font-size:12.5px;display:block}.csc .top .tm{color:#6fcf97;margin-top:6px;font-variant-numeric:tabular-nums}
+.csc .tr{flex:1;overflow:hidden;display:flex;flex-direction:column;gap:6px;justify-content:flex-end}
+.bub{max-width:88%;border-radius:14px;padding:7px 10px;font-size:12.5px;line-height:1.35;animation:tkin .3s}.bub.us{background:var(--ok);align-self:flex-start;border-bottom-left-radius:4px}.bub.them{background:#3a3a3a;align-self:flex-end;border-bottom-right-radius:4px}
+.bub small{display:block;font-size:10px;opacity:.7;margin-bottom:2px}
+.csc .chk2{display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:11.5px}.csc .chk2 span{background:rgba(255,255,255,.08);border-radius:8px;padding:5px 8px;color:#bbb}.csc .chk2 span.ok{color:#fff;background:rgba(31,122,76,.5)}.csc .chk2 span.no{color:#fff;background:rgba(194,59,42,.55)}
+.csc .end{text-align:center;font-weight:700;padding:8px;border-radius:10px}.csc .end.ok{background:var(--ok)}.csc .end.no{background:var(--bad)}.csc .end.w{background:#8a5a00}
+
+.offer{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:22px;align-items:start}
+@media(max-width:900px){.offer{grid-template-columns:1fr}}
+.ocard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 30px 60px -40px rgba(0,0,0,.3)}
+.ok1{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:700;background:var(--ok-soft);color:var(--ok)}.pill i{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 1.4s infinite}
+.osrc{display:flex;gap:6px}.osrc b{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--fg2);font-weight:600}
+.ocard h3{font-size:clamp(30px,3.6vw,46px);margin-top:16px;line-height:1}
+.osub{color:var(--fg2);font-size:16px;margin-top:6px}
+.orow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.orow div{background:var(--sunk);border-radius:14px;padding:12px 14px}.orow s{text-decoration:none;display:block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3);font-weight:600}.orow b{display:block;font-size:16px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ostamp{margin-top:18px;display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--fg2)}.ostamp span:first-child{display:flex;align-items:center;gap:8px;color:var(--fg);font-weight:600}.ostamp i{width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block}
+.oadj{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px}
+/* pantalla 2: recibidas */
+.bigc{text-align:center;padding:10px 0 18px}.bigc b{font-family:var(--serif);font-weight:400;font-size:clamp(90px,14vw,180px);line-height:.9;display:block;font-variant-numeric:tabular-nums}.bigc s{text-decoration:none;font-size:clamp(20px,2.4vw,28px);display:block;margin-top:6px}.bigc small{display:block;color:var(--fg2);font-size:15px;margin:10px auto 0;max-width:560px}
+.tiles{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;max-width:900px;margin:0 auto}
+.tiles i{width:22px;height:28px;border-radius:3px;background:#fff;border:1px solid var(--line2);display:block;position:relative;opacity:0;transform:translateY(-12px);transition:all .35s}
+.tiles i::before{content:"";position:absolute;left:4px;right:4px;top:6px;height:2px;background:var(--line2);box-shadow:0 5px 0 var(--line2),0 10px 0 var(--line2)}
+.tiles i.in{opacity:1;transform:none}.tiles i.off{opacity:.12;transform:scale(.8)}
+.tiles i.keep{border-color:var(--ok);background:var(--ok-soft)}.tiles i.keep::before{background:var(--ok);box-shadow:0 5px 0 var(--ok),0 10px 0 var(--ok)}
+.tiles.small i{width:14px;height:18px;border-radius:2px}.tiles.small i::before{left:3px;right:3px;top:4px;height:1.5px;box-shadow:0 3px 0 var(--line2),0 6px 0 var(--line2)}.tiles.small i.keep::before{box-shadow:0 3px 0 var(--ok),0 6px 0 var(--ok)}
+/* pantalla 3: filtrado */
+.filt{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:26px;align-items:start}
+@media(max-width:900px){.filt{grid-template-columns:1fr}}
+.fcount{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}.fcount b{font-family:var(--serif);font-weight:400;font-size:clamp(60px,8vw,110px);line-height:.9;font-variant-numeric:tabular-nums}.fcount s{text-decoration:none;font-size:18px;color:var(--fg2)}
+.fgroup{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--fg3);margin:14px 0 6px;display:flex;align-items:center;gap:8px}.fgroup:first-child{margin-top:0}
+.fgroup span{background:var(--line);height:1px;flex:1}
+.frow{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:6px;opacity:.35;transition:all .4s}
+.frow.on{opacity:1}.frow.now{border-color:var(--ok);box-shadow:0 0 0 3px var(--ok-soft)}
+.frow .ic{width:34px;height:34px;border-radius:10px;background:var(--sunk);display:grid;place-items:center;font-size:17px}
+.frow b{display:block;font-size:15px}.frow s{text-decoration:none;font-size:12.5px;color:var(--fg3);display:block}
+.frow .n{font-family:var(--serif);font-size:28px;font-variant-numeric:tabular-nums;min-width:52px;text-align:right}.frow .n small{font-family:var(--sans);font-size:12px;color:var(--bad);display:block;font-weight:600}
+/* pantalla 4: fichas */
+.three-h{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:16px}.three-h h3{font-size:clamp(22px,2.6vw,32px);margin-top:4px}
+.rows{display:grid;grid-template-columns:22px 1fr;gap:6px 10px;align-items:start}
+.rows .ri{font-size:15px;line-height:1.2;text-align:center}
+.rows .rt{font-size:13px;line-height:1.3;color:var(--fg2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rows .rt b{color:var(--fg);font-weight:600}.rows .rt i{font-style:normal;color:var(--ok);font-weight:700}.rows .rt i.w{color:var(--warn)}.rows .rt i.b{color:var(--bad)}.rows .rt i.p{color:var(--fg3);font-weight:500}
+.card .av{aspect-ratio:16/7;font-size:46px}
+.try{max-width:1100px;margin:14px auto 0}.try .drop{display:block}
+.try .drop{margin:0;padding:14px}
+
 .inbox{display:flex;flex-direction:column;gap:6px;margin-top:14px}
 .cvrow{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:9px 11px;background:#fff;font-size:13.5px;transition:all .3s;position:relative;overflow:hidden}
 .cvrow .ic{width:30px;height:36px;border-radius:5px;background:var(--sunk);display:grid;place-items:center;flex:none;font-size:9px;font-weight:700;color:var(--fg3);border:1px solid var(--line2)}
@@ -348,30 +457,72 @@ footer .wrap{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
   <p class="sub">Conéctanos tu bandeja. Leemos cada currículum, comprobamos lo que dice con datos públicos, llamamos a los que encajan y te sentamos a tres con todo firmado.</p>
   <style>.hero h1{font-size:clamp(38px,6vw,84px)}.hero h1.cl .rot{white-space:normal}</style>
 
-  <div class="app" id="app">
+  <div class="player" id="app">
     <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg><b id="subd">tulocal</b>.altasala.com</span><span class="who" id="who"><span class="on">Dirección</span><span>RRHH</span><span>Jefes de sala</span><span>Jefes de cocina</span></span></div>
-    <div class="l">
-      <h3 id="appH">Tu bandeja</h3><p class="hint" id="appHint">Lo que te llega de InfoJobs, Turijobs, Job Today y el correo. Aquí, seis currículums de ejemplo.</p>
-      <div class="locs" id="locs" hidden></div>
-      <div class="rolechips" id="roles"></div>
-      <div class="cond" style="margin-top:12px">
-        <div><label>Sueldo bruto / mes</label><input id="cPay" placeholder="1.700" autocomplete="off"></div>
-        <div><label>Cuadrante</label><input id="cRoster" placeholder="partido, libra L y M" autocomplete="off"></div>
-      </div>
-      <div class="salh" id="salh"></div>
-      <div class="inbox" id="inbox"></div>
-      <label class="drop" id="drop"><b>Arrastra aquí tus currículums</b>PDF o Word. Se leen en tu navegador, no salen de aquí.<input type="file" id="fileIn" multiple accept=".pdf,.doc,.docx,.txt"></label>
-      <div class="go"><button class="btn ok lg" onclick="go()">Leer, comprobar y enseñarme mis tres</button><button class="btn" id="venueBtn" onclick="setup()" style="justify-content:center">Poner el nombre de tu local</button></div>
-      <div class="vac" id="vac" hidden></div>
-    </div>
-    <div class="r">
-      <div class="cursor" id="cursor"><svg viewBox="0 0 24 24"><path d="M4 2l16 8-7 2-2 7z" fill="#fff" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-      <div class="stamp"><div id="s1"><i></i><span>Bandeja conectada</span><b id="s1t">—:—</b></div><span class="ar">→</span><div id="s2" class="hid"><i></i><span id="s2l">Leídos y comprobados</span><b id="s2t">—:—</b></div></div>
-      <div class="eng" id="eng"></div>
-      <div class="cards" id="cards"><div class="sk"><div class="a"></div><div class="b"><i></i><i></i><i style="width:60%"></i></div></div><div class="sk"><div class="a"></div><div class="b"><i></i><i></i><i style="width:60%"></i></div></div><div class="sk"><div class="a"></div><div class="b"><i></i><i></i><i style="width:60%"></i></div></div></div>
-      <div class="under"><span id="underL">Currículums de ejemplo: personas ficticias, casas reales. Lo que ponen se contrasta con OpenStreetMap, LinkedIn, escuelas de hostelería y tus locales. Sueldo, cuadrante e idiomas se confirman en la llamada.</span><a href="#" onclick="more();return false" id="moreL"></a></div>
+    <div class="pbar"><button class="seg on" data-s="0" onclick="goStage(0,true)"><i></i><b>1</b>Cómo funciona</button><button class="seg" data-s="1" onclick="goStage(1,true)"><i></i><b>2</b>Tu oferta</button><button class="seg" data-s="2" onclick="goStage(2,true)"><i></i><b>3</b>Revisión</button><button class="seg" data-s="3" onclick="goStage(3,true)"><i></i><b>4</b>Los que cualifican</button><button class="seg" data-s="4" onclick="goStage(4,true)"><i></i><b>5</b>Llamadas</button><span class="pctl"><button onclick="togglePause()" id="pauseBtn">Pausar</button><button onclick="restart()">Otra vez</button></span></div>
+    <div class="stages">
+
+      <section class="stg on" data-s="0">
+        <div class="flow" id="flow">
+          <div class="fs" data-k="0"><div class="fico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="10" width="32" height="28" rx="4"/><path d="M14 20h20M14 27h14"/><circle cx="34" cy="31" r="5" fill="var(--ok)" stroke="none"/><path d="M31.5 31l2 2 3-3.5" stroke="#fff"/></svg></div><b>Tu oferta</b><s>la que ya tienes en InfoJobs, Turijobs o Job Today</s></div>
+          <div class="fa"></div>
+          <div class="fs" data-k="1"><div class="fico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14h18l6 6v16H12z"/><path d="M8 10h18l6 6" opacity=".5"/><path d="M17 26h12M17 31h8"/></svg><span class="fn" id="flowN">157</span></div><b>157 currículums</b><s>te llegan en tres días. Nadie los lee</s></div>
+          <div class="fa"></div>
+          <div class="fs" data-k="2"><div class="fico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="21" cy="21" r="11"/><path d="M29 29l9 9"/><path d="M16 21l3.5 3.5L27 17" stroke="var(--ok)"/></svg></div><b>Los revisamos uno a uno</b><s>casas, fechas, escuela, dónde vive. Contra datos públicos</s></div>
+          <div class="fa"></div>
+          <div class="fs" data-k="3"><div class="fico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M38 32v5a3 3 0 01-3.3 3A30 30 0 018 13.3 3 3 0 0111 10h5a3 3 0 013 2.6c.2 1.4.5 2.7 1 4a3 3 0 01-.7 3.1l-2 2a24 24 0 009 9l2-2a3 3 0 013.1-.7c1.3.5 2.6.8 4 1a3 3 0 012.6 3z"/><path d="M30 10a10 10 0 018 8M30 16a4 4 0 013 3" stroke="var(--ok)"/></svg></div><b>Llamamos a los que pasan</b><s>un minuto: sueldo, cuadrante, idioma hablado, 3 preguntas del oficio</s></div>
+          <div class="fa"></div>
+          <div class="fs" data-k="4"><div class="fico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="17" r="5"/><circle cx="33" cy="17" r="5"/><circle cx="24" cy="14" r="5"/><path d="M6 38c0-6 4-10 9-10M42 38c0-6-4-10-9-10M15 38c0-6 4-10 9-10s9 4 9 10"/></svg></div><b>Tres en tu mesa</b><s>con vídeo, referencia y condiciones firmadas. En 48 h</s></div>
+        </div>
+        <div class="fcta"><button class="btn ok lg" id="connectBtn" onclick="goStage(1,true)">Conectar con la oferta <b id="connectT">Camarero/a 40h</b> en InfoJobs →</button><span class="small">Demo con una oferta de ejemplo. Todo lo que ves es real salvo los candidatos y las llamadas, que son simulados.</span></div>
+      </section>
+
+      <section class="stg" data-s="1">
+        <div class="offer">
+          <div class="ocard"><div class="ok1"><span class="pill live" id="oPill"><i></i>Conectando…</span><span class="osrc"><b>InfoJobs</b><b>Turijobs</b><b>Job Today</b></span></div>
+            <h3 id="oTitle">Camarero/a 40h</h3><div class="osub" id="oSub">Tu local · <span class="city">Madrid</span></div>
+            <div class="orow"><div><s>Sueldo bruto</s><b id="oPay">1.700 €/mes</b></div><div><s>Cuadrante</s><b id="oRoster">partido, libra L y M</b></div><div><s>Inicio</s><b>cuanto antes</b></div></div>
+            <div class="ostamp"><span><i></i>Conectada a tu bandeja · <b id="oT">10:02</b></span><span>Lo que llegue, lo leemos y lo comprobamos nosotros</span></div>
+          </div>
+          <div class="recv"><div class="bigc"><b id="recN">0</b><s>candidaturas recibidas</s><small id="recSub">en tres días. Lo normal en una oferta de sala: unas 150. Nadie tiene tiempo de leerlas entre servicios.</small></div><div class="tiles" id="tiles1"></div></div>
+        </div>
+        <details class="oadj2"><summary>Ajustar la oferta de la demo: puesto, sueldo, cuadrante, local</summary>
+          <div class="oadj"><div class="rolechips" id="roles"></div><div class="locs" id="locs" hidden></div>
+            <div class="cond" style="margin-top:10px"><div><label>Sueldo bruto / mes</label><input id="cPay" placeholder="1.700" autocomplete="off"></div><div><label>Cuadrante</label><input id="cRoster" placeholder="partido, libra L y M" autocomplete="off"></div></div>
+            <div class="salh" id="salh"></div><div class="vac" id="vac" hidden></div>
+            <button class="btn" id="venueBtn" onclick="setup()" style="margin-top:10px">Poner el nombre de tu local</button></div>
+        </details>
+        <p class="hint" id="appHint" hidden></p><h3 id="appH" hidden></h3>
+      </section>
+
+      <section class="stg" data-s="2">
+        <div class="rev">
+          <div class="rleft">
+            <div class="rcount"><div><b id="rDone">0</b><s>revisados</s></div><div class="g"><b id="rPass">0</b><s>pasan</s></div><div class="r"><b id="rOut">0</b><s>descartados</s></div></div>
+            <div class="ticker" id="ticker"></div>
+          </div>
+          <div class="rmain"><div class="rpaper" id="rpaper"></div><div class="rchecks" id="rchecks"></div></div>
+        </div>
+      </section>
+
+      <section class="stg" data-s="3">
+        <div class="three-h"><div><span class="k">Pasan en papel: <b id="passN">38</b> de 157</span><h3 id="threeH">Estos cinco son los mejores. Por qué cualifican.</h3></div><div class="stamp"><div id="s1" class="on"><i></i><span>Bandeja</span><b id="s1t">10:02</b></div><span class="ar">→</span><div id="s2" class="on"><i></i><span id="s2l">Revisados</span><b id="s2t">10:09</b></div></div></div>
+        <div class="cards five" id="cards"></div>
+        <div class="under"><span id="underL">Demo: personas ficticias con casas, escuelas y títulos reales. Lo que no se puede comprobar en papel se confirma en la llamada.</span><a href="#" onclick="more();return false" id="moreL"></a></div>
+        <div class="fcta" style="margin-top:14px"><button class="btn ok lg" onclick="callAll()">📞 Llamar a los cinco</button><span class="small">O llama a uno con el botón de su ficha.</span></div>
+      </section>
+
+      <section class="stg" data-s="4">
+        <div class="calls">
+          <div class="clist" id="clist"></div>
+          <div class="cphone"><div class="phone"><div class="scr" id="cscr"></div></div></div>
+        </div>
+        <div class="fcta" id="callsDone" hidden><button class="btn pri lg" onclick="document.getElementById('llamamos').scrollIntoView({behavior:'smooth'})">Ver qué pasa después: vídeo, firma y entrevista ↓</button></div>
+        <p class="sim">Demo: llamadas, respuestas y transcripciones simuladas. En tu versión instalada son llamadas reales de nuestro equipo, con audio y hora.</p>
+      </section>
     </div>
   </div>
+  <div class="try"><label class="drop" id="drop"><b>¿Quieres probarlo con tus currículums?</b>Arrástralos aquí. PDF o Word. Se leen en tu navegador y no salen de aquí.<input type="file" id="fileIn" multiple accept=".pdf,.doc,.docx,.txt"></label><div class="inbox" id="inbox" hidden></div></div>
 </header>
 
 <section class="proof wrap">
@@ -761,46 +912,125 @@ async function verify(cv,live){const out=[];const add=(st,t,d,src,s)=>out.push({
 function match(cv){let m=44;const rx=ROLES.find(x=>x[0]===ST.role);if(rx&&rx[0]!=='Otra cosa'){if(rx[1].test(cv.role+' '+cv.exps.map(e=>e.role).join(' ')))m+=22;else m-=15}
   if(cv.total)m+=Math.round(24*cv.ok/cv.total);m-=cv.bad*12+cv.warn*6;if(cv.avail)m+=5;const yrs=cv.exps.reduce((a,e)=>a+Math.max(0,e.to-e.from),0);m+=Math.min(8,yrs);m-=(3-Math.min(3,cv.exps.length))*3;if(!cv.phone)m-=30;const k=payM(),b=BAND(cv.roleKey);if(k!=null&&k<b[0]*.85&&/jefe|segundo/i.test(cv.role))m-=10;return Math.max(30,Math.min(97,Math.round(m)))}
 
-/* ================= UI ================= */
+/* ================= UI: historia en cuatro pantallas ================= */
 let CVS=[];const byId=i=>CVS.find(c=>c.id===i);
 const ini=n=>n.split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();
-function roles(){document.getElementById('roles').innerHTML=ROLES.slice(0,7).map(([r])=>`<button aria-pressed="${ST.role===r}" onclick="pick('${r}')">${r}</button>`).join('');document.getElementById('venueBtn').textContent=ST.venue?'Local: '+ST.venue:'Poner el nombre de tu local';document.getElementById('cPay').value=ST.pay||'';document.getElementById('cRoster').value=ST.roster||'';salh()}
-function salh(){const el=document.getElementById('salh');if(!ST.role){el.textContent='Elige el puesto y te decimos lo que se paga en '+CITY+'.';el.className='salh';return}const b=BAND(ST.role),k=payM(),r=ST.role.toLowerCase();if(k==null){el.className='salh';el.innerHTML=`En ${CITY} un <b>${esc(r)}</b> cobra <b>${fmtE(b[0])} a ${fmtE(b[1])}</b> brutos al mes. Si quieres que aguante, no bajes de ${fmtE(b[0])}.`}else if(k<b[0]*.85){el.className='salh warn';el.innerHTML=`<b>${fmtE(k)}</b> está por debajo de lo que se paga por un ${esc(r)} (${fmtE(b[0])} a ${fmtE(b[1])}). Muchos dirán que no en la llamada.`}else if(k<b[0]){el.className='salh';el.innerHTML=`<b>${fmtE(k)}</b> va algo justo (${fmtE(b[0])} a ${fmtE(b[1])}).`}else{el.className='salh ok';el.innerHTML=`<b>${fmtE(k)}</b> está en banda (${fmtE(b[0])} a ${fmtE(b[1])}).`}}
+const TOTAL=157;
+/* embudo con lo que mira un hostelero. Cifras de la demo: proporciones que nos han contado los dueños (Asun: la mitad de los CV son de fuera de la ciudad; Edu: tres probados por puesto). */
+const FUNNEL=[
+ {g:'En papel · 7 minutos · lo hace el motor'},
+ {ic:'📍',t:'Vive en la ciudad',d:'Lo que más candidaturas tumba: la mitad son de fuera (Asun, 13 hoteles). Dónde vive y cómo llega decide (Ana Balil)',to:81},
+ {ic:'🏠',t:'Sus casas existen y aguantó',d:'Cada restaurante contrastado en el mapa y en LinkedIn. Cuánto duró en cada uno',to:66},
+ {ic:'🔪',t:'Oficio para este puesto',d:'Sala de carta, barra, cocina. No vale cualquiera con delantal',to:44},
+ {ic:'🎓',t:'Formación o alguien que responda',d:'Escuela reconocida, título, o una casa que da referencia',to:38},
+ {g:'En la llamada · 1 minuto por persona · lo hacemos nosotros'},
+ {ic:'📞',t:'Coge el teléfono',d:'El que no contesta en dos intentos, fuera',to:31},
+ {ic:'📅',t:'Quiere tu cuadrante',d:'Fines de semana, noches, partido. Lo que nadie quiere (Asun)',to:19},
+ {ic:'💶',t:'Acepta tu sueldo',d:'Dicho en voz alta, no supuesto',to:12},
+ {ic:'🗣️',t:'Idioma hablado y 3 preguntas del oficio',d:'Con los idiomas se miente siempre: se le hace hablar (Asun). Tres preguntas sobre un plato destapan al falso (Xabier)',to:8},
+ {g:'Vídeo y referencia · antes de que pierdas un minuto'},
+ {ic:'🎥',t:'Vídeo de 1 min y su última casa al teléfono',d:'En cinco minutos ves si vale (Ana Balil). Alguien responde por él (Borja)',to:5},
+ {ic:'🏆',t:'Los tres mejores para tu mesa',d:'Con todo firmado antes de pisar tu local',to:3}];
+function roles(){document.getElementById('roles').innerHTML=ROLES.slice(0,7).map(([r])=>`<button aria-pressed="${ST.role===r}" onclick="pick('${r}')">${r}</button>`).join('');document.getElementById('venueBtn').textContent=ST.venue?'Local: '+ST.venue:'Poner el nombre de tu local';document.getElementById('cPay').value=ST.pay||'';document.getElementById('cRoster').value=ST.roster||'';salh();offer()}
+function offer(){const r=ST.role||'Camarero';const k=payM()||BAND(r)[0];document.getElementById('connectT').textContent=(CL&&CL.vacantes?(CL.vacantes.find(v=>v.city===CITY&&v.rol===r)||{}).puesto:null)||(r+(r==='Camarero'||r==='Barra'?'/a':'')+' 40h');document.getElementById('oTitle').textContent=(CL&&CL.vacantes?(CL.vacantes.find(v=>v.city===CITY&&v.rol===r)||{}).puesto:null)||(r+(r==='Camarero'||r==='Barra'?'/a':'')+' 40h');document.getElementById('oSub').textContent=(ST.local||ST.venue||'Tu local')+' · '+CITY;document.getElementById('oPay').textContent=fmtE(k)+'/mes';document.getElementById('oRoster').textContent=ST.roster||'partido, libra L y M';}
+function salh(){const el=document.getElementById('salh');if(!ST.role){el.textContent='Elige el puesto y te decimos lo que se paga en '+CITY+'.';el.className='salh';return}const b=BAND(ST.role),k=payM(),r=ST.role.toLowerCase();if(k==null){el.className='salh';el.innerHTML=`En ${CITY} un <b>${esc(r)}</b> cobra <b>${fmtE(b[0])} a ${fmtE(b[1])}</b> brutos al mes.`}else if(k<b[0]*.85){el.className='salh warn';el.innerHTML=`<b>${fmtE(k)}</b> está por debajo de lo que se paga por un ${esc(r)} (${fmtE(b[0])} a ${fmtE(b[1])}). Muchos dirán que no en la llamada.`}else if(k<b[0]){el.className='salh';el.innerHTML=`<b>${fmtE(k)}</b> va algo justo (${fmtE(b[0])} a ${fmtE(b[1])}).`}else{el.className='salh ok';el.innerHTML=`<b>${fmtE(k)}</b> está en banda (${fmtE(b[0])} a ${fmtE(b[1])}).`}}
 function pick(r,silent){ST.role=r;save();roles();if(!silent)stopAuto()}
-['Pay','Roster'].forEach(k=>document.getElementById('c'+k).addEventListener('input',e=>{ST[k.toLowerCase()]=e.target.value;save();salh();stopAuto()}));
-function inbox(){document.getElementById('inbox').innerHTML=CVS.map(c=>`<div class="cvrow ${c.state||''}" id="row-${c.id}"><span class="ic ${/\.pdf$/i.test(c.file)?'pdf':'doc'}">${/\.pdf$/i.test(c.file)?'PDF':'DOC'}</span><div style="min-width:0"><b>${esc(c.file)}</b><s>${c.vac?'Inscrito a: '+esc(c.vac):('Llegó por '+esc(c.via||'correo'))}${c.demo?' · ejemplo':''}</s></div><span class="st"><i></i><span>${c.state==='done'?(c.ok+' de '+c.total+' ✓'):c.state==='reading'?'leyendo…':'en bandeja'}</span></span><span class="pb"></span></div>`).join('')}
-function loadDemo(){const set=DEMO[CITY]||DEMO.Madrid;CVS=set.map(d=>Object.assign(parseCV(d.text,d),{demo:true}));if(CL&&CL.vacantes){CVS.forEach(c=>{const v=CL.vacantes.find(v=>v.city===CITY&&(v.rol===c.roleKey));c.vac=v?v.puesto+' · '+v.fecha:c.vac})}else CVS.forEach(c=>c.vac='');inbox()}
+['Pay','Roster'].forEach(k=>document.getElementById('c'+k).addEventListener('input',e=>{ST[k.toLowerCase()]=e.target.value;save();salh();offer();stopAuto()}));
+function inbox(){const el=document.getElementById('inbox');el.hidden=!CVS.some(c=>c.live);el.innerHTML=CVS.filter(c=>c.live).map(c=>`<div class="cvrow ${c.state||''}" id="row-${c.id}"><span class="ic ${/\.pdf$/i.test(c.file)?'pdf':'doc'}">${/\.pdf$/i.test(c.file)?'PDF':'DOC'}</span><div style="min-width:0"><b>${esc(c.file)}</b><s>${esc(c.name||'')}</s></div><span class="st"><i></i><span>${c.state==='done'?(c.ok+' de '+c.total+' ✓'):c.state==='reading'?'leyendo…':'en bandeja'}</span></span><span class="pb"></span></div>`).join('')}
+function loadDemo(){const set=DEMO[CITY]||DEMO.Madrid;const live=CVS.filter(c=>c.live);CVS=live.concat(set.map(d=>Object.assign(parseCV(d.text,d),{demo:true})));if(CL&&CL.vacantes){CVS.forEach(c=>{const v=CL.vacantes.find(v=>v.city===CITY&&(v.rol===c.roleKey));c.vac=v?v.puesto+' · '+v.fecha:c.vac})}else CVS.forEach(c=>{if(c.demo)c.vac=''})}
 /* subida real */
-let pdfjs=null,mammothL=null;
 function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
 async function readFile(f){const name=f.name;if(/\.pdf$/i.test(name)){if(!window.pdfjsLib){await loadScript('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js');window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'}const pdf=await window.pdfjsLib.getDocument({data:await f.arrayBuffer()}).promise;let t='';for(let i=1;i<=Math.min(pdf.numPages,4);i++){const pg=await pdf.getPage(i);const c=await pg.getTextContent();let last=null;c.items.forEach(it=>{if(last!==null&&Math.abs(it.transform[5]-last)>3)t+='\n';t+=it.str+(it.hasEOL?'\n':' ');last=it.transform[5]})}return t}
   if(/\.docx?$/i.test(name)){if(!window.mammoth)await loadScript('https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js');const r=await window.mammoth.extractRawText({arrayBuffer:await f.arrayBuffer()});return r.value}
   return await f.text()}
-async function addFiles(files){stopAuto();const arr=[...files].filter(f=>/\.(pdf|docx?|txt)$/i.test(f.name));if(!arr.length)return;for(const f of arr){try{const text=await readFile(f);const cv=parseCV(text,{file:f.name,via:'tu bandeja'});cv.live=true;CVS.unshift(cv)}catch(e){console.error(e)}}inbox();document.getElementById('appHint').textContent=`${CVS.length} currículums en la bandeja. Pulsa el botón y los leemos y comprobamos.`}
+async function addFiles(files){stopAuto();const arr=[...files].filter(f=>/\.(pdf|docx?|txt)$/i.test(f.name));if(!arr.length)return;for(const f of arr){try{const text=await readFile(f);const cv=parseCV(text,{file:f.name,via:'tu bandeja'});cv.live=true;CVS.unshift(cv)}catch(e){console.error(e)}}inbox();goStage(2,true)}
 const dz=document.getElementById('drop');dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('over')});dz.addEventListener('dragleave',()=>dz.classList.remove('over'));dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('over');addFiles(e.dataTransfer.files)});document.getElementById('fileIn').addEventListener('change',e=>addFiles(e.target.files));
 
-let engT=[];
-async function go(fromAuto){if(!fromAuto)stopAuto();if(!ST.role)pick('Camarero',true);if(!CVS.length)loadDemo();
-  const now=new Date();document.getElementById('s1t').textContent=hhmm(now);document.getElementById('s1').classList.add('on');document.getElementById('s2').classList.add('hid');document.getElementById('cards').innerHTML='';
-  const eng=document.getElementById('eng');eng.className='eng on';const steps=[['Leer',`${CVS.length} currículums abiertos: nombre, teléfono, puestos, fechas, escuela, idiomas`],['Casas',`cada casa contra ${Object.keys(VENUES).length} conocidas, LinkedIn y OpenStreetMap`],['Fechas','que no se pisen, que no haya huecos raros, que los años sumen'],['Escuelas','contra 59 escuelas y títulos de hostelería'],['Teléfono','que haya a quién llamar'],['Encaje',`con ${esc(ST.role.toLowerCase())}, ${payM()?fmtE(payM()):'tu sueldo'} y ${esc(ST.roster||'tu cuadrante')}`]];
-  eng.innerHTML=`<div class="bar"><i id="ebar"></i></div>`+steps.map(([a,b])=>`<div class="row"><span class="lg">${a}</span><span>${b}</span><span class="ck">✓</span></div>`).join('');
-  const rows=eng.querySelectorAll('.row');rows.forEach((r,i)=>setTimeout(()=>{r.classList.add('on');document.getElementById('ebar').style.width=((i+1)/rows.length*100)+'%'},300+i*420));
-  CVS.forEach((c,i)=>{c.state='reading'});inbox();
-  for(let i=0;i<CVS.length;i++){const c=CVS[i];await verify(c,!!c.live);await new Promise(r=>setTimeout(r,c.live?50:260));c.state='done';const row=document.getElementById('row-'+c.id);if(row){row.className='cvrow done';row.querySelector('.st span').textContent=c.ok+' de '+c.total+' ✓'}}
-  setTimeout(()=>{eng.className='eng';render();const t2=new Date(now.getTime()+7*60000);document.getElementById('s2t').textContent=hhmm(t2);document.getElementById('s2').classList.remove('hid');document.getElementById('s2').classList.add('on')},400)}
+/* ---- las cinco pantallas ---- */
+let STAGE=0,PAUSED=false,stT=[];const T=ms=>new Promise(r=>stT.push(setTimeout(r,ms)));
+function setStage(n){STAGE=n;document.querySelectorAll('.seg').forEach(s=>{const k=+s.dataset.s;s.classList.toggle('on',k===n);s.classList.toggle('done',k<n)});document.querySelectorAll('.stg').forEach(s=>s.classList.toggle('on',+s.dataset.s===n))}
+async function stage0(){setStage(0);const fs=[...document.querySelectorAll('.fs')],fa=[...document.querySelectorAll('.fa')];fs.forEach(x=>x.classList.remove('on'));fa.forEach(x=>x.classList.remove('on'));for(let i=0;i<fs.length;i++){if(STAGE!==0)return;fs[i].classList.add('on');if(i>0)fa[i-1].classList.add('on');await T(i===1?1300:1000)}await T(2200)}
+function tilesInto(id){const el=document.getElementById(id);el.innerHTML='';for(let i=0;i<TOTAL;i++){el.appendChild(document.createElement('i'))}return [...el.children]}
+async function stage1(){setStage(1);offer();const pill=document.getElementById('oPill');pill.innerHTML='<i></i>Conectando…';const tiles=tilesInto('tiles1');const n=document.getElementById('recN');n.textContent='0';await T(1100);pill.innerHTML='<i></i>Conectada';const t0=performance.now();const dur=2400;await new Promise(res=>{const f=t=>{const k=Math.min(1,(t-t0)/dur);const v=Math.round(TOTAL*(1-Math.pow(1-k,3)));n.textContent=v;tiles.forEach((x,i)=>{if(i<v)x.classList.add('in')});if(k<1&&STAGE===1)requestAnimationFrame(f);else res()};requestAnimationFrame(f)});await T(1500)}
+/* revisión uno a uno: 151 rápidos (motivos según lo que nos han contado los dueños) + los 6 leídos de verdad, despacio */
+const FAST_NO=[['vive fuera de la ciudad',76],['su casa no existe en el mapa',15],['oficio distinto (office, reparto, fast food)',22],['sin teléfono ni correo',6]];
+const FAST_OK=['pasa a llamada · 2 casas comprobadas','pasa a llamada · escuela reconocida','pasa a llamada · 4 años en la misma casa','pasa a llamada · vive a 15 min'];
+function fastList(){const out=[];FAST_NO.forEach(([why,n])=>{for(let i=0;i<n;i++)out.push({ok:false,why})});const passN=TOTAL-6-out.length;for(let i=0;i<passN;i++)out.push({ok:true,why:FAST_OK[i%FAST_OK.length]});let seed=7;const rnd=()=>{seed=(seed*1103515245+12345)%2147483648;return seed/2147483648};for(let i=out.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[out[i],out[j]]=[out[j],out[i]]}return out}
+function rPaper(cv){const lines=cv.text.split(/\r?\n/);let html='';const mark=s=>{let o=esc(s);cv.exps.forEach(e=>{if(e.venue&&s.includes(e.venue)){const c=cv.checks.find(x=>x.t===e.venue);o=o.replace(esc(e.venue),`<mark class="${c?c.st:''}">${esc(e.venue)}</mark>`)}});cv.schools.forEach(sc=>{const i=deacc(s).toLowerCase().indexOf(deacc(sc).toLowerCase());if(i>=0){const real=s.substr(i,sc.length);o=o.replace(esc(real),`<mark class="ok">${esc(real)}</mark>`)}});const ph=s.match(/(?:\+34\s?)?[67]\d{2}[\s.]?\d{3}[\s.]?\d{3}\b/);if(ph)o=o.replace(esc(ph[0]),`<mark class="ok">${esc(ph[0])}</mark>`);const yr=s.match(/\d{1,2}\s*años? de experiencia/i);if(yr){const c=cv.checks.find(x=>x.t==='Años declarados');o=o.replace(esc(yr[0]),`<mark class="${c?c.st:''}">${esc(yr[0])}</mark>`)}return o};let first=true;lines.forEach(l=>{if(!l.trim())return;if(first){html+=`<h4>${esc(l)}</h4>`;first=false;return}if(/^[A-ZÁÉÍÓÚÑ\s]{6,}$/.test(l.trim())){html+=`<div class="sec">${esc(l.trim())}</div>`;return}html+=`<p>${mark(l)}</p>`});return html}
+function passes(cv){return cv.bad===0&&cv.phone&&(cv.city||CITY)===CITY}
+async function reviewOne(cv){const P=document.getElementById('rpaper'),C=document.getElementById('rchecks');P.className='rpaper';P.innerHTML=rPaper(cv)+`<span class="verdict" id="verd"></span>`;C.innerHTML='';await T(350);
+  const shown=cv.checks.filter(o=>o.st!=='p');for(const o of shown){if(STAGE!==2)return;C.insertAdjacentHTML('beforeend',`<div class="rc ${o.st}"><span class="ic">${o.st==='ok'?'✓':o.st==='w'?'!':'✗'}</span><div><b>${esc(o.t)}</b><s>${esc(o.d)}</s></div><small>${esc(o.src)}</small></div>`);await T(30);C.lastElementChild.classList.add('on');await T(o.st==='ok'?260:520)}
+  const ok=passes(cv);const v=document.getElementById('verd');v.className='verdict '+(ok?'ok':'no');v.textContent=ok?'Pasa a llamada':'Descartado';await T(60);v.classList.add('on');
+  const why=ok?(cv.ok+' de '+cv.total+' comprobados'):(cv.checks.find(o=>o.st==='b')||{}).s||'no cuadra';tick(cv.name,ok,why,true);await T(1400);P.classList.add(ok?'out-ok':'out-no');C.style.opacity=0;await T(450);C.style.opacity=1}
+let RD=0,RP=0,RO=0;
+function tick(name,ok,why,real){RD++;if(ok)RP++;else RO++;document.getElementById('rDone').textContent=RD;document.getElementById('rPass').textContent=RP;document.getElementById('rOut').textContent=RO;const tk=document.getElementById('ticker');tk.insertAdjacentHTML('afterbegin',`<div class="tk ${ok?'ok':'no'}"><span class="id">#${String(RD).padStart(3,'0')}</span><span class="st"></span><span class="why">${real?'<b>'+esc(name)+'</b> · ':''}${esc(why)}</span></div>`);while(tk.children.length>14)tk.lastElementChild.remove()}
+async function stage2(){setStage(2);RD=RP=RO=0;document.getElementById('ticker').innerHTML='';document.getElementById('rpaper').innerHTML='';document.getElementById('rchecks').innerHTML='';
+  for(const c of CVS){if(!c.checks||!c.checks.length)await verify(c,!!c.live)}
+  const fast=fastList();const live=CVS.filter(c=>c.live),demo=CVS.filter(c=>!c.live);const slow=live.concat(demo);
+  /* ritmo: ráfagas rápidas y, entre ellas, un currículum leído de verdad */
+  let fi=0;const burst=async n=>{for(let i=0;i<n&&fi<fast.length;i++){if(STAGE!==2)return;const f=fast[fi++];tick('',f.ok,f.why,false);await T(70)}};
+  await burst(18);for(const cv of slow){if(STAGE!==2)return;await reviewOne(cv);await burst(Math.ceil((fast.length-fi)/Math.max(1,slow.length-slow.indexOf(cv)-1)||fast.length-fi))}
+  await burst(fast.length-fi);document.getElementById('passN').textContent=RP;await T(900)}
+function stage3(){setStage(3);if(RD===0){document.getElementById('passN').textContent=CVS.filter(passes).length+' de '+CVS.length+' leídos'}render()}
+async function play(from){stT.forEach(clearTimeout);stT=[];PAUSED=false;document.getElementById('pauseBtn').textContent='Pausar';if(from<=0){await stage0();if(STAGE!==0||PAUSED)return}if(from<=1){await stage1();if(STAGE!==1||PAUSED)return}if(from<=2){await stage2();if(STAGE!==2||PAUSED)return}stage3()}
+function goStage(n,user){if(user)stopAuto();stT.forEach(clearTimeout);stT=[];if(n===0){stage0()}else if(n===1){play(1)}else if(n===2){play(2)}else if(n===3){(async()=>{for(const c of CVS)if(!c.checks||!c.checks.length)await verify(c,!!c.live);stage3()})()}else{(async()=>{for(const c of CVS)if(!c.checks||!c.checks.length)await verify(c,!!c.live);setStage(4);callsInit()})()}}
+function togglePause(){PAUSED=!PAUSED;document.getElementById('pauseBtn').textContent=PAUSED?'Seguir':'Pausar';if(PAUSED){stT.forEach(clearTimeout);stT=[]}else play(STAGE)}
+function restart(){stopAuto();ST.yes=[];ST.no=[];save();loadDemo();play(0)}
+function go(fromAuto){if(!fromAuto)stopAuto();play(0)}
+
+/* ---- pantalla 5: llamadas ---- */
+const CALLS={};
+function callsInit(){const five=ranked().filter(x=>passes(x.c)).slice(0,5).map(x=>x.c);const L=document.getElementById('clist');L.innerHTML=five.map(cv=>{const st=CALLS[cv.id]||{};return `<div class="cl ${st.now?'now':''}" id="cl-${cv.id}"><span class="avs">${ini(cv.name)}</span><div><b>${esc(cv.name)}</b><s>${esc(cv.role||cv.roleKey)} · ${esc(cv.phone?cv.phone.replace(/^(\+34)?(\d{3})(\d{3})(\d{3})$/,'$2 $3 $4'):'')}</s></div>${st.res?`<span class="res ${st.cls}">${esc(st.res)}</span>`:`<button onclick="callOne('${cv.id}')">📞 Llamar</button>`}</div>`}).join('');
+  const done=five.filter(c=>CALLS[c.id]&&CALLS[c.id].res);document.getElementById('callsDone').hidden=done.length<five.length||!five.length;
+  if(!document.getElementById('cscr').innerHTML)document.getElementById('cscr').innerHTML=`<div class="csc"><div class="top"><div class="avs">☎</div><b>Pulsa Llamar</b><s>o llama a los cinco seguidos</s></div></div>`}
+const Q3={cocina:[['¿Cómo montas el cuarto frío para 120 cubiertos un sábado?','Mise en place a las 10, etiquetado con fecha, y el pase frío lo saco yo. Las ensaladas emplatadas en frío, nunca antes de la comanda.'],['¿A qué temperatura regeneras y cuánto tiempo?','Depende del producto. Un guiso a 65 en el corazón, nunca más de dos horas en caliente. Lo controlamos con sonda.']],sala:[['Sábado, 180 cubiertos, dos rangos caídos. ¿Qué haces?','Reparto los rangos entre los que quedan, el pase lo marco yo y aviso a cocina para espaciar las entradas. Y pido a barra que saque bebidas de la mesa 1 a la 8.'],['Mesa de ocho con dos alérgenos. ¿Cómo tomas la comanda?','Pregunto antes de la carta, lo marco en la comanda con el número de silla y lo canto en cocina. Y el plato sale marcado.']]};
+function script(cv){const first=cv.name.split(' ')[0];const k=payM()||BAND(ST.role||'Camarero')[0];const roster=ST.roster||'partido, libra L y M';const house=cv.exps[0]?cv.exps[0].venue:'tu última casa';const V=ST.venue||'un restaurante del centro';const kind=/cocin|partida|chef|sushi/i.test(cv.role+' '+cv.roleKey)?'cocina':'sala';const q=Q3[kind];const lang=cv.langs[0]?cv.langs[0].l:null;
+  return [['us',`Hola ${first}, soy de AltaSala, llamamos por la oferta de ${(ST.role||'camarero').toLowerCase()} en ${V} a la que te has inscrito. ¿Tienes un minuto?`],['them','Sí, dime.'],['us',`¿Sigues disponible? El sueldo son ${fmtE(k)} brutos al mes y el cuadrante es ${roster}.`],['them',`Sí. Me encaja. Partido no me importa.`],['us',q[0][0]],['them',q[0][1]],['us',q[1][0]],['them',q[1][1]],...(lang&&/ingl/i.test(lang)?[['us',`One more thing: how would you explain today's special to a table from London?`],['them',`Sure. It's a slow-cooked lamb shoulder with roasted peppers, we serve it for two and it takes about twenty minutes.`]]:[]),['us',`Perfecto. ¿Me das el nombre de tu responsable en ${house} para pedir referencia?`],['them',`Claro, te lo paso por WhatsApp ahora mismo.`],['us',`Te mando un enlace para grabar un vídeo de un minuto presentándote, y te paso la oferta por escrito para firmar. Gracias ${first}.`]]}
+function scriptNo(cv){const first=cv.name.split(' ')[0];const k=payM()||BAND(ST.role||'Camarero')[0];return [['us',`Hola ${first}, soy de AltaSala, llamamos por la oferta a la que te has inscrito. ¿Tienes un minuto?`],['them','Sí.'],['us',`El sueldo son ${fmtE(k)} brutos al mes, con ${ST.roster||'partido, libra L y M'}.`],['them',`Uf, por menos de ${fmtE(k+300)} no me muevo, lo siento. Donde estoy cobro eso.`],['us',`Entendido, gracias por decirlo claro. Si cambia algo te avisamos.`]]}
+let CALLING=false;
+async function callOne(id){stopAuto();if(CALLING)return;CALLING=true;const cv=byId(id);const five=ranked().filter(x=>passes(x.c)).slice(0,5).map(x=>x.c);const idx=five.indexOf(cv);const outcome=idx===2?'noanswer':idx===3?'no':'ok';
+  CALLS[id]={now:true};callsInit();const scr=document.getElementById('cscr');const first=cv.name.split(' ')[0];const tm=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+  const base=`<div class="csc"><div class="top"><div class="avs">${ini(cv.name)}</div><b>${esc(cv.name)}</b><s>${esc(cv.role||cv.roleKey)} · ${esc(cv.exps[0]?cv.exps[0].venue:'')}</s><div class="tm" id="ctm">Llamando…</div></div><div class="tr" id="ctr"></div><div class="chk2" id="cchk"><span>Disponible</span><span>Acepta sueldo</span><span>Cuadrante</span><span>3 preguntas del oficio</span><span>Idioma hablado</span><span>Referencia</span></div></div>`;
+  scr.innerHTML=base;const row=document.getElementById('cl-'+id);row.querySelector('button,.res')?.remove();row.insertAdjacentHTML('beforeend',`<span class="res ring">Llamando…</span>`);
+  await T(1600);
+  if(outcome==='noanswer'){document.getElementById('ctm').textContent='No contesta';document.getElementById('ctr').innerHTML=`<div class="bub us"><small>AltaSala · 13:21</small>No coge. Reintento a las 18:00, antes del servicio. Y WhatsApp: "Hola ${esc(first)}, te hemos llamado por la oferta de ${esc((ST.role||'camarero').toLowerCase())}. ¿A qué hora te viene bien?"</div>`;CALLS[id]={res:'No contesta · reintento 18:00',cls:'w'};callsInit();CALLING=false;return}
+  const lines=outcome==='ok'?script(cv):scriptNo(cv);let sec=0;const tr=document.getElementById('ctr');document.getElementById('ctm').textContent='En llamada · '+tm(sec);const chk=document.getElementById('cchk').children;
+  for(let i=0;i<lines.length;i++){const [w,l]=lines[i];sec+=w==='us'?4:6;tr.insertAdjacentHTML('beforeend',`<div class="bub ${w}"><small>${w==='us'?'AltaSala':esc(first)}</small>${esc(l)}</div>`);document.getElementById('ctm').textContent='En llamada · '+tm(sec);while(tr.children.length>4)tr.firstElementChild.remove();
+    if(outcome==='ok'){if(i===3){chk[0].className='ok';chk[1].className='ok';chk[2].className='ok'}if(i===7)chk[3].className='ok';if(/London/.test(l))chk[4].className='ok';if(/WhatsApp ahora/.test(l))chk[5].className='ok'}else if(i===3){chk[0].className='ok';chk[1].className='no'}
+    await T(w==='us'?1500:1900)}
+  if(outcome==='ok'){if(chk[4].className!=='ok')chk[4].className='ok';scr.querySelector('.csc').insertAdjacentHTML('beforeend',`<div class="end ok">Dice sí · pasa a vídeo y firma</div>`);CALLS[id]={res:'Sí · vídeo y firma',cls:'ok'};ST.yes.push(id);ST.pick=id;save();phone()}else{scr.querySelector('.csc').insertAdjacentHTML('beforeend',`<div class="end no">Dice no al sueldo</div>`);CALLS[id]={res:'No · sueldo',cls:'no'}}
+  callsInit();CALLING=false}
+async function callAll(){stopAuto();setStage(4);callsInit();const five=ranked().filter(x=>passes(x.c)).slice(0,5).map(x=>x.c);for(const cv of five){if(CALLS[cv.id]&&CALLS[cv.id].res)continue;await callOne(cv.id);await T(700)}document.getElementById('callsDone').hidden=false}
+
+/* ---- fichas: lo que mira un hostelero ---- */
 function ranked(){return CVS.filter(c=>!ST.no.includes(c.id)).map(c=>({c,m:match(c)})).sort((a,b)=>b.m-a.m)}
 let SHOWN=3;
-function cardHTML(cv){const m=match(cv);const vb=cv.bad?'b':cv.warn?'w':'';const k=payM(),b=BAND(cv.roleKey);const pay=k==null?null:k>=b[0]?'Sueldo en su banda · lo confirma en la llamada':'Tu sueldo está por debajo de su banda';
-  const shown=cv.checks.filter(o=>o.st!=='p').slice(0,5);
-  return `<div class="card" id="card${cv.id}"><div class="av">${ini(cv.name)}<span class="vbadge ${vb}"><i></i>${cv.ok} de ${cv.total} ✓</span><span class="via">${esc(cv.via||'bandeja')}</span>${cv.vac?`<span class="vac2">Inscrito a: <b>${esc(cv.vac)}</b></span>`:''}</div>
-  <div class="bd"><div><div class="nm">${esc(cv.name)}</div><div class="rl">${esc(cv.role||cv.roleKey)}${cv.exps[0]&&cv.exps[0].venue?' · '+esc(cv.exps[0].venue):''}</div><div class="rl" style="margin-top:2px"><b>${m} %</b> encaje con ${esc(ST.role.toLowerCase())}</div></div>
-  <div class="chk">${shown.map(o=>`<span class="${o.st}"><b>${o.st==='ok'?'✓':o.st==='w'?'!':'✗'}</b><span><b style="color:var(--fg);font-weight:600">${esc(o.t)}</b> · ${esc(o.s)}</span></span>`).join('')}${pay?`<span class="p"><b>·</b>${esc(pay)}</span>`:''}</div>
+function ageEst(cv){const ys=cv.exps.map(e=>e.from).filter(Boolean);const m=cv.text.match(/\b(19[6-9]\d|200[0-8])\b/);let first=ys.length?Math.min(...ys):null;if(!first)return null;const age=new Date().getFullYear()-first+19;return age>=18&&age<70?age:null}
+function rowsHTML(cv){const st=x=>x==='ok'?'<i>✓</i>':x==='w'?'<i class="w">!</i>':x==='b'?'<i class="b">✗</i>':'<i class="p">…</i>';const ch=t=>cv.checks.find(o=>o.t===t);
+  const houses=cv.exps.filter(e=>e.venue).slice(0,2).map(e=>{const o=ch(e.venue);const yrs=Math.max(0,Math.round(e.to-e.from));return `${st(o?o.st:'p')} <b>${esc(e.venue)}</b> ${yrs?yrs+' año'+(yrs>1?'s':''):'<1 año'}`}).join(' · ');
+  const sch=cv.schools[0];const fo=ch('Formación')||ch('Títulos');
+  const age=ageEst(cv);const fe=ch('Fechas');const yrs=ch('Años declarados');
+  const av=cv.avail;const city=cv.city||'';const lang=cv.langs.map(x=>x.l+(x.lvl?' '+x.lvl:'')).join(', ');
+  return `<div class="rows">
+  <span class="ri">📍</span><span class="rt">${city&&city===CITY?'<i>✓</i>':'<i class="w">!</i>'} Vive en <b>${esc(city||'?')}</b> · distancia a tu local: en la llamada</span>
+  <span class="ri">🏠</span><span class="rt" title="${esc(cv.exps.map(e=>e.venue).join(', '))}">${houses||'<i class="p">…</i> sin casas con fecha'}</span>
+  <span class="ri">📅</span><span class="rt">${fe?st(fe.st):''} ${yrs?('<b>'+esc(yrs.s)+'</b> · '):''}${fe?esc(fe.s):'fechas sin comprobar'}${age?` · <b>unos ${age} años</b> (estimada)`:''}</span>
+  <span class="ri">🎓</span><span class="rt">${fo?st(fo.st)+' <b>'+esc(sch)+'</b>':'<i class="p">…</i> sin formación reglada · referencia de su casa en la llamada'}</span>
+  <span class="ri">🗓️</span><span class="rt">${av?'<i>✓</i> <b>'+esc(av)+'</b>':'<i class="p">…</i> fines de semana, noches, partido: en la llamada'}</span>
+  <span class="ri">🗣️</span><span class="rt"><i class="p">…</i> ${lang?'<b>'+esc(lang)+'</b> · ':''}se comprueba hablando + 3 preguntas del oficio</span>
+  <span class="ri">🎥</span><span class="rt"><i class="p">…</i> vídeo de 1 min y su última casa al teléfono, tras la llamada</span></div>`}
+function cardHTML(cv){const m=match(cv);const vb=cv.bad?'b':cv.warn?'w':'';
+  return `<div class="card" id="card${cv.id}"><div class="av">${ini(cv.name)}<span class="vbadge ${vb}"><i></i>${cv.ok} de ${cv.total} ✓ en papel</span><span class="via">${esc(cv.via||'bandeja')}</span>${cv.vac?`<span class="vac2">Inscrito a: <b>${esc(cv.vac)}</b></span>`:''}</div>
+  <div class="bd"><div><div class="nm">${esc(cv.name)}</div><div class="rl">${esc(cv.role||cv.roleKey)}${cv.exps[0]&&cv.exps[0].venue?' · '+esc(cv.exps[0].venue):''} · <b>${m} %</b> encaje</div></div>
+  <div class="why5"><b>Por qué cualifica:</b> ${esc(why5(cv))}</div>
+  ${rowsHTML(cv)}
   <div class="yn"><button onclick="decide('${cv.id}',false)">Paso</button><button class="y" onclick="decide('${cv.id}',true)">Llamar</button></div><div class="did"><i></i>Le llamamos ahora · 1 min</div></div></div>`}
-function render(){const top=ranked().filter(x=>!ST.yes.includes(x.c.id)).slice(0,3);SHOWN=3;const c=document.getElementById('cards');c.innerHTML=top.length?top.map(({c})=>cardHTML(c)).join(''):'<div class="none" style="grid-column:1/-1">No queda nadie en la bandeja. Arrastra más currículums.</div>';top.forEach(({c},i)=>setTimeout(()=>document.getElementById('card'+c.id)?.classList.add('on'),120+i*160));
-  const rest=Math.max(0,ranked().length-3);document.getElementById('moreL').textContent=rest?`Ver los ${rest} restantes →`:'';document.getElementById('s2l').textContent='Leídos y comprobados · los tres que mejor encajan';if(top[0])paperFor(top[0].c)}
-function more(){stopAuto();const list=ranked().filter(x=>!ST.yes.includes(x.c.id));const batch=list.slice(SHOWN,SHOWN+6);const c=document.getElementById('cards');batch.forEach(({c:cv},i)=>{c.insertAdjacentHTML('beforeend',cardHTML(cv));setTimeout(()=>document.getElementById('card'+cv.id)?.classList.add('on'),80+i*120)});SHOWN+=batch.length;const rest=list.length-SHOWN;document.getElementById('moreL').textContent=rest>0?`Ver ${Math.min(6,rest)} más (quedan ${rest}) →`:''}
-function decide(id,yes){stopAuto();const el=document.getElementById('card'+id);if(yes){ST.yes.push(id);ST.pick=id;save();el.classList.add('yes');document.getElementById('s2l').textContent='Llamando ahora · 1 min';phone();document.getElementById('vN').textContent=ST.yes.length;setTimeout(()=>document.getElementById('llamamos').scrollIntoView({behavior:'smooth'}),900)}else{ST.no.push(id);save();el.classList.add('no');setTimeout(()=>{el.remove();const shown=[...document.querySelectorAll('.card')].map(x=>x.id.slice(4));const next=ranked().find(x=>!shown.includes(x.c.id)&&!ST.yes.includes(x.c.id));if(next){document.getElementById('cards').insertAdjacentHTML('beforeend',cardHTML(next.c));setTimeout(()=>document.getElementById('card'+next.c.id)?.classList.add('on'),60)}},350)}}
-function setup(){stopAuto();const d=document.createElement('div');d.className='modal';d.onclick=e=>{if(e.target===d)d.remove()};d.innerHTML=`<div class="in"><h3>Tu local</h3><p style="color:var(--fg2);margin:8px 0 0">Entra en cada llamada que hacemos y en la oferta que firma el candidato.</p><input id="vn" value="${esc(ST.venue||'')}" placeholder="Grupo Tragaluz"><div class="acts"><button class="btn" onclick="this.closest('.modal').remove()">Cancelar</button><button class="btn pri" onclick="ST.venue=document.getElementById('vn').value.trim();save();roles();client();phone();this.closest('.modal').remove()">Guardar</button></div></div>`;document.body.appendChild(d);setTimeout(()=>document.getElementById('vn').focus(),0)}
+function why5(cv){const parts=[];const h=cv.exps.filter(e=>e.venue&&cv.checks.find(o=>o.t===e.venue&&o.st==='ok'));if(h.length){const yrs=Math.round(h.reduce((a,e)=>a+Math.max(0,e.to-e.from),0));parts.push(`${yrs} año${yrs!==1?'s':''} en ${h.map(e=>e.venue).slice(0,2).join(' y ')}, que existen`)}if(cv.schools[0])parts.push(cv.schools[0]);if((cv.city||CITY)===CITY)parts.push('vive en '+CITY);if(cv.avail)parts.push(cv.avail.toLowerCase());if(cv.langs.length)parts.push(cv.langs.map(x=>x.l.toLowerCase()).join(', ')+' por confirmar hablando');if(cv.phone)parts.push('teléfono para llamar hoy');return parts.join(' · ')}
+function render(){const top=ranked().filter(x=>passes(x.c)).slice(0,5);SHOWN=5;const c=document.getElementById('cards');c.innerHTML=top.length?top.map(({c})=>cardHTML(c)).join(''):'<div class="none" style="grid-column:1/-1">No queda nadie. Arrastra más currículums.</div>';top.forEach(({c},i)=>setTimeout(()=>document.getElementById('card'+c.id)?.classList.add('on'),120+i*160));
+  const rest=ranked().filter(x=>!passes(x.c)).length;document.getElementById('moreL').textContent=rest?`Ver los ${rest} descartados →`:'';if(top[0])paperFor(top[0].c)}
+function more(){stopAuto();const list=ranked().filter(x=>!passes(x.c));const batch=list.slice(0,6);const c=document.getElementById('cards');batch.forEach(({c:cv},i)=>{c.insertAdjacentHTML('beforeend',cardHTML(cv));setTimeout(()=>document.getElementById('card'+cv.id)?.classList.add('on'),80+i*120)});SHOWN+=batch.length;const rest=list.length-SHOWN;document.getElementById('moreL').textContent=rest>0?`Ver ${Math.min(6,rest)} más (quedan ${rest}) →`:''}
+function decide(id,yes){stopAuto();const el=document.getElementById('card'+id);if(yes){setStage(4);callsInit();callOne(id)}else{ST.no.push(id);save();el.classList.add('no');setTimeout(()=>{el.remove();const shown=[...document.querySelectorAll('.card')].map(x=>x.id.slice(4));const next=ranked().find(x=>!shown.includes(x.c.id)&&!ST.yes.includes(x.c.id));if(next){document.getElementById('cards').insertAdjacentHTML('beforeend',cardHTML(next.c));setTimeout(()=>document.getElementById('card'+next.c.id)?.classList.add('on'),60)}},350)}}
+function setup(){stopAuto();const d=document.createElement('div');d.className='modal';d.onclick=e=>{if(e.target===d)d.remove()};d.innerHTML=`<div class="in"><h3>Tu local</h3><p style="color:var(--fg2);margin:8px 0 0">Entra en la oferta, en cada llamada y en lo que firma el candidato.</p><input id="vn" value="${esc(ST.venue||'')}" placeholder="Grupo Tragaluz"><div class="acts"><button class="btn" onclick="this.closest('.modal').remove()">Cancelar</button><button class="btn pri" onclick="ST.venue=document.getElementById('vn').value.trim();save();roles();client();phone();this.closest('.modal').remove()">Guardar</button></div></div>`;document.body.appendChild(d);setTimeout(()=>document.getElementById('vn').focus(),0)}
 
 /* ===== sección "qué comprobamos": el papel y los checks ===== */
 function paperFor(cv){const P=document.getElementById('paper');const lines=cv.text.split(/\r?\n/);let html=`<span class="tag3">${cv.demo?'currículum de ejemplo · persona ficticia, casas reales':'tu currículum'}</span>`;
@@ -810,18 +1040,9 @@ function paperFor(cv){const P=document.getElementById('paper');const lines=cv.te
   document.getElementById('vchecks').innerHTML=cv.checks.map(o=>`<div class="check ${o.st}"><span class="ic">${o.st==='ok'?'✓':o.st==='w'?'!':o.st==='b'?'✗':'…'}</span><div><b>${esc(o.t)}</b><s>${esc(o.d)}</s><small>Fuente: ${esc(o.src)}</small></div></div>`).join('');
   const chs=[...document.querySelectorAll('.check')];const io=new IntersectionObserver((es,obs)=>{es.forEach(e=>{if(e.isIntersecting){chs.forEach((c,i)=>setTimeout(()=>c.classList.add('on'),i*180));obs.disconnect()}})},{threshold:.2});io.observe(document.getElementById('verif'))}
 
-/* ===== autoplay del hero ===== */
-let AUTO=true,autoT=[];const cur=document.getElementById('cursor');
-function stopAuto(){if(!AUTO)return;AUTO=false;autoT.forEach(clearTimeout);cur.classList.remove('on')}
-function moveTo(el){if(!el)return;const a=document.getElementById('app').getBoundingClientRect(),b=el.getBoundingClientRect();cur.style.left=(b.left-a.left+b.width/2-8)+'px';cur.style.top=(b.top-a.top+b.height/2-4)+'px'}
-function typeInto(id,txt,done){const el=document.getElementById(id);el.value='';let i=0;const tick=()=>{if(!AUTO)return;el.value=txt.slice(0,++i);ST[id==='cPay'?'pay':'roster']=el.value;salh();if(i<txt.length)autoT.push(setTimeout(tick,55));else done&&done()};tick()}
-function auto(){loadDemo();if(ST.pay&&ST.role){go(true);AUTO=false;return}cur.classList.add('on');const demoRole=ST.role||'Camarero';
-  autoT.push(setTimeout(()=>{moveTo([...document.querySelectorAll('#roles button')].find(b=>b.textContent===demoRole))},300));
-  autoT.push(setTimeout(()=>{pick(demoRole,true)},1000));
-  autoT.push(setTimeout(()=>{moveTo(document.getElementById('cPay'))},1300));
-  autoT.push(setTimeout(()=>{const bb=BAND(demoRole);const defPay=fmtE(Math.round((bb[0]+bb[1])/2/100)*100).replace(' €','');typeInto('cPay',ST.pay||defPay,()=>{autoT.push(setTimeout(()=>{moveTo(document.getElementById('cRoster'))},200));autoT.push(setTimeout(()=>{typeInto('cRoster',ST.roster||'partido, libra L y M',()=>{save();autoT.push(setTimeout(()=>{moveTo(document.querySelector('.go .btn'))},300));autoT.push(setTimeout(()=>{cur.classList.remove('on');go(true);AUTO=false},1100))})},700))})},1900));
-  document.getElementById('app').addEventListener('pointerdown',stopAuto,{once:true})}
-
+/* ===== autoplay ===== */
+let AUTO=true;function stopAuto(){AUTO=false}
+function auto(){loadDemo();if(!ST.role)ST.role='Camarero';if(!ST.pay){const bb=BAND(ST.role);ST.pay=fmtE(Math.round((bb[0]+bb[1])/2/100)*100).replace(' €','')}if(!ST.roster)ST.roster='partido, libra L y M';save();roles();play(0)}
 /* ===== hero: rotación ===== */
 const RW0=['camarero','cocinero','jefe de partida','jefe de sala','segundo de cocina','barra','sumiller'];const SHORTL=CL&&CL.locales?CL.locales.filter(l=>l.n.length<=12):[];const RW=(SHORTL.length)?RW0.map((w,i)=>w+' para '+SHORTL[i%SHORTL.length].n):RW0;let ri=0;
 function rotate(){const el=document.getElementById('rot');const w=RW[ri=(ri+1)%RW.length];let i=el.textContent.length;const del=()=>{if(i>0){el.textContent=el.textContent.slice(0,--i);setTimeout(del,28)}else{let j=0;const typ=()=>{if(j<w.length){el.textContent=w.slice(0,++j);setTimeout(typ,50)}else setTimeout(rotate,2200)};typ()}};del()}
@@ -857,13 +1078,13 @@ function client(){const venue=ST.venue;const sd=venue?slug(venue.replace(/^grupo
   if(!CL)return;document.querySelector('.hero h1').classList.add('cl');const r=document.documentElement.style;if(CL.color){if(CL.color.accent)r.setProperty('--ok',CL.color.accent);if(CL.color.accentSoft)r.setProperty('--ok-soft',CL.color.accentSoft);if(CL.color.ink)r.setProperty('--ink',CL.color.ink);if(CL.color.bg)r.setProperty('--bg',CL.color.bg)}
   if(CL.logo){document.getElementById('navLogo').hidden=true;const b=document.getElementById('navBrand');b.hidden=false;document.getElementById('navBrandImg').src=CL.logo;const o=document.getElementById('ownLogo');o.src=CL.logo;o.hidden=false;document.getElementById('ownName').hidden=true}
   document.getElementById('stripGen').hidden=true;document.getElementById('stripFor').hidden=false;document.getElementById('stripVenue').textContent=CL.name;
-  document.getElementById('appH').textContent='Vuestra bandeja';document.getElementById('appHint').innerHTML=`Lo que llega a vuestras ${CL.vacantes?CL.vacantes.filter(v=>v.city===CITY).length:''} ofertas de ${CITY}. Aquí, seis currículums de ejemplo.`;
+  offer();
   if(CL.locales&&CL.locales.length){const L=document.getElementById('locs');L.hidden=false;L.innerHTML=CL.locales.map(l=>`<button aria-pressed="${ST.local===l.n}" onclick="pickLocal('${esc(l.n)}')">${esc(l.n)}<small>${esc(l.city)}</small></button>`).join('')}
-  if(CL.vacantes&&CL.vacantes.length){const V=document.getElementById('vac');V.hidden=false;const VS=CL.vacantes.map((v,i)=>({v,i})).sort((a,b)=>(b.v.city===CITY)-(a.v.city===CITY));V.innerHTML=`<span class="k"><i></i>Vuestras ofertas publicadas · ${CL.vacantes.length}</span>`+VS.slice(0,6).map(({v,i})=>`<div class="v"><div><b>${esc(v.puesto)}</b><s>${[v.local,v.city,v.fecha].filter(Boolean).map(esc).join(' · ')}</s></div><button onclick="openVac(${i})">Conectar bandeja</button></div>`).join('')+`<div class="src">Fuente: ${CL.vacantes.map(v=>v.src).filter((x,i,a)=>a.indexOf(x)===i).join(', ')} · consultado ${esc(CL.consultado||'')}. Al conectar, leemos y comprobamos lo que llega y llamamos nosotros.</div>`}
+  if(CL.vacantes&&CL.vacantes.length){const V=document.getElementById('vac');V.hidden=false;const VS=CL.vacantes.map((v,i)=>({v,i})).sort((a,b)=>(b.v.city===CITY)-(a.v.city===CITY));V.innerHTML=`<span class="k"><i></i>Vuestras ofertas publicadas · ${CL.vacantes.length}</span>`+VS.slice(0,6).map(({v,i})=>`<div class="v"><div><b>${esc(v.puesto)}</b><s>${[v.local,v.city,v.fecha].filter(Boolean).map(esc).join(' · ')}</s></div><button onclick="openVac(${i})">Usar esta oferta</button></div>`).join('')+`<div class="src">Fuente: ${CL.vacantes.map(v=>v.src).filter((x,i,a)=>a.indexOf(x)===i).join(', ')} · consultado ${esc(CL.consultado||'')}. Al conectar, leemos y comprobamos lo que llega y llamamos nosotros.</div>`}
   if(CL.locales&&CL.locales.some(l=>l.logo)){const lg=CL.locales.filter(l=>l.logo);document.getElementById('marq').innerHTML=lg.concat(lg).map(l=>`<img src="${l.logo}" alt="${esc(l.n)}" title="${esc(l.n)}">`).join('');document.getElementById('proofK').textContent=`Vuestros ${CL.locales.length} locales en ${CL.cities.join(' y ')} · ya los conocemos`}
   if(ST.role&&ST.role!=='Otra cosa'){const sl=(CL.locales||[]).filter(l=>l.n.length<=12);document.getElementById('rot').textContent=ST.role.toLowerCase()+(sl.length?' para '+sl[0].n:'')}}
 function pickLocal(n){stopAuto();const l=(CL.locales||[]).find(x=>x.n===n);ST.local=n;save();if(l&&l.city&&l.city!==CITY){const q=new URLSearchParams(location.search);q.set('ciudad',l.city);q.set('cliente',Q.get('cliente'));location.search=q.toString();return}client();roles()}
-function openVac(i){stopAuto();const v=CL.vacantes[i];if(v.city&&v.city!==CITY){const q=new URLSearchParams(location.search);q.set('ciudad',v.city);q.set('puesto',v.rol||'Camarero');q.set('reset','1');location.search=q.toString();return}ST.role=v.rol||'Camarero';save();client();roles();go(true);document.getElementById('cards').scrollIntoView({behavior:'smooth',block:'center'})}
+function openVac(i){stopAuto();const v=CL.vacantes[i];if(v.city&&v.city!==CITY){const q=new URLSearchParams(location.search);q.set('ciudad',v.city);q.set('puesto',v.rol||'Camarero');q.set('reset','1');location.search=q.toString();return}ST.role=v.rol||'Camarero';save();client();roles();goStage(1,true)}
 
 /* ===== arranque ===== */
 document.querySelectorAll('.city').forEach(e=>e.textContent=CITY);
