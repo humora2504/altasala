@@ -13,7 +13,7 @@
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
 button,input,select,textarea{font:inherit;color:inherit}
 h1,h2,h3{margin:0;font-family:var(--serif);font-weight:400;letter-spacing:-.015em;text-wrap:balance}
-h1{font-size:clamp(40px,5.4vw,66px);line-height:1.04}h2{font-size:clamp(30px,3.8vw,46px);line-height:1.08}h3{font-size:24px;line-height:1.15}
+h1{font-size:clamp(34px,5.4vw,66px);line-height:1.04}h2{font-size:clamp(30px,3.8vw,46px);line-height:1.08}h3{font-size:24px;line-height:1.15}
 p{margin:0}img{max-width:100%}
 .wrap{max-width:1160px;margin:0 auto;padding-inline:clamp(16px,3.5vw,32px)}
 section{padding-block:clamp(56px,7vw,96px)}
@@ -42,7 +42,7 @@ select.lang{border:1px solid var(--line2);background:#fff;border-radius:8px;padd
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--fg2);margin-bottom:22px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 8px}
 .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
 .eyebrow b{color:var(--fg);font-weight:500}
-.rot{white-space:nowrap;font-style:italic}
+.rotw{white-space:nowrap}.rot{font-style:italic}
 @keyframes blink{to{opacity:0}}
 .hero .lede{margin-top:20px}
 .hero .cta{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
@@ -245,7 +245,7 @@ footer .in{display:flex;flex-wrap:wrap;gap:18px 36px;justify-content:space-betwe
 <header class="hero"><div class="wrap g">
   <div>
     <div class="eyebrow"><i></i><span data-i18n="hero.eyebrow">Hiring software, installed for</span>&nbsp;<b id="clientName"></b></div>
-    <h1><span data-i18n="hero.h1a">Your next</span> <span class="rot" id="rot">head chef</span><span data-i18n="hero.h1b">, on your desk in 48 hours.</span></h1>
+    <h1><span data-i18n="hero.h1a">Your next</span> <span class="rotw"><span class="rot" id="rot">head chef</span>,</span> <span data-i18n="hero.h1b">on your desk in 48 hours.</span></h1>
     <p class="lede" data-i18n="hero.lede">We find the people, confirm their experience across several tools, interview them ourselves and get them to accept your conditions. You get a short report and say yes or no to the interview. Nobody reaches you who is not qualified.</p>
     <div class="cta"><a class="btn pri lg" href="#demo" data-i18n="cta.main">Try the demo</a><a class="btn lg" href="#how" data-i18n="cta.how">What you get</a></div>
     <div class="proof">
@@ -360,7 +360,7 @@ let OWN=[];
 
 const I18N={
 en:{'nav.how':'What you get','nav.demo':'Live demo','nav.triage':'CV triage','nav.pricing':'Pricing','cta.main':'Try the demo','cta.how':'What you get','hero.eyebrow':'Hiring software, installed for',
- 'hero.h1a':'Your next','hero.h1b':', on your desk in 48 hours.',
+ 'hero.h1a':'Your next','hero.h1b':'on your desk in 48 hours.',
  'hero.lede':'We find the people, confirm their experience across several tools, interview them ourselves and get them to accept your conditions. You get a short report and say yes or no to the interview. Nobody reaches you who is not qualified.',
  'p1':'<b>Not an agency, not a job board.</b> Software installed for your venue','p2':'<b>Unlimited hires.</b> Kitchen, floor, bar, wine, from entry to head of department','p3':'<b>We write, call and interview.</b> You only decide yes or no',
  'badge':'Confirmed this week','hc.ok':'Accepted your conditions','hc.sub':'Interview booked',
@@ -394,7 +394,7 @@ en:{'nav.how':'What you get','nav.demo':'Live demo','nav.triage':'CV triage','na
  'foot.src':'Profiles: public professional data, Melbourne, October 2026. CVs you drop never leave your browser.','foot.priv':'Candidate data for a client falls under the Australian Privacy Act 1988.','src.LinkedIn':'LinkedIn','src.Your database':'Your CVs',
  'rots':'head chef|sommelier|restaurant manager|bartender|sous chef|chef de partie|waiter|barista'},
 es:{'nav.how':'Qué consigues','nav.demo':'Demo en vivo','nav.triage':'Triaje de CV','nav.pricing':'Precios','cta.main':'Probar la demo','cta.how':'Qué consigues','hero.eyebrow':'Software de contratación, instalado para',
- 'hero.h1a':'Tu próximo','hero.h1b':', en tu mesa en 48 horas.',
+ 'hero.h1a':'Tu próximo','hero.h1b':'en tu mesa en 48 horas.',
  'hero.lede':'Encontramos a la gente, confirmamos su experiencia cruzando varias herramientas, los entrevistamos nosotros y hacemos que acepten tus condiciones. Tú recibes un informe corto y dices sí o no a la entrevista. No te llega nadie que no esté cualificado.',
  'p1':'<b>Ni agencia ni portal.</b> Software instalado en tu local','p2':'<b>Contrataciones ilimitadas.</b> Cocina, sala, barra, bodega, desde base hasta jefe','p3':'<b>Escribimos, llamamos y entrevistamos.</b> Tú solo decides sí o no',
  'badge':'Confirmado esta semana','hc.ok':'Acepta tus condiciones','hc.sub':'Entrevista agendada',
