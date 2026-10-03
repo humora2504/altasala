@@ -62,6 +62,66 @@ nav.top .in{display:flex;align-items:center;gap:28px;padding-block:14px}
 .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .logo{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-family:var(--serif);font-size:15px;color:var(--fg);flex:none;overflow:hidden;background:#fff;border:1px solid var(--line);position:relative}
 
+/* contador vivo bajo la portada */
+.live{display:flex;gap:clamp(14px,3vw,36px);flex-wrap:wrap;padding-bottom:10px}
+.live div{display:flex;align-items:baseline;gap:8px;font-size:14px;color:var(--fg2)}
+.live b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--fg)}.live b.g{color:var(--ok)}
+/* panel del dueño */
+.ph2{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+@media(max-width:900px){.jobs{grid-template-columns:1fr}}
+.job{border:1px solid var(--line);border-radius:18px;padding:18px;background:#fff;display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:all .15s}
+.job:hover{border-color:var(--fg3);transform:translateY(-2px)}
+.job .jt{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.job b.rn{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.05}
+.job .st2{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;border-radius:999px;padding:5px 10px;white-space:nowrap}
+.st2.s0{background:var(--warn-soft);color:var(--warn)}.st2.s1{background:var(--sunk);color:var(--fg2)}.st2.s2{background:#e3eefc;color:#1d4f91}.st2.s3{background:var(--ok-soft);color:var(--ok)}
+.job .cost{display:flex;align-items:baseline;gap:8px;color:var(--bad);flex-wrap:wrap}.job .cost b{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1;white-space:nowrap}.job .cost s{text-decoration:none;font-size:12.5px;color:var(--fg3)}
+.job .cost.ok{color:var(--ok)}
+.job .meta{font-size:13px;color:var(--fg2);line-height:1.45}
+.job .faces{display:flex;margin-top:auto;padding-top:6px}.job .faces .av{width:30px;height:30px;font-size:10px;border:2px solid #fff;margin-left:-8px}.job .faces .av:first-child{margin-left:0}
+.job.add{border-style:dashed;align-items:center;justify-content:center;text-align:center;color:var(--fg2);min-height:190px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+@media(max-width:700px){.kpis{grid-template-columns:1fr 1fr}}
+.kpi{background:var(--sunk);border-radius:14px;padding:14px 16px}.kpi b{font-family:var(--serif);font-weight:400;font-size:28px;display:block;line-height:1}.kpi s{text-decoration:none;font-size:12.5px;color:var(--fg2)}
+/* cuadrante */
+.grid7{display:grid;grid-template-columns:52px repeat(7,1fr);gap:3px;font-size:10.5px;color:var(--fg3)}
+.grid7 span{text-align:center}.grid7 .c{height:16px;border-radius:4px;background:var(--sunk)}.grid7 .c.on{background:var(--ok)}.grid7 .c.off{background:var(--bad-soft)}
+.grid7 .rl2{text-align:left;font-size:10.5px;color:var(--fg3);align-self:center}
+.cuad{margin-top:6px}.cuad .lbl2{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3);font-weight:600;margin-bottom:5px;display:flex;justify-content:space-between}
+.cuad .lbl2 i{font-style:normal;font-weight:500;letter-spacing:0;text-transform:none;color:var(--fg3)}
+/* línea de tiempo pantalla 4 */
+.tlm{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:4px}
+@media(max-width:800px){.tlm{grid-template-columns:1fr 1fr}}
+.tlm div{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:12.5px;color:var(--fg3);background:#fff}
+.tlm div b{display:block;font-size:13px;color:var(--fg);font-weight:600;margin-top:2px}.tlm div.on{border-color:var(--ok);background:var(--ok-soft)}.tlm div.on s,.tlm div.on b{color:var(--ok)}.tlm div s{text-decoration:none;font-family:var(--serif);font-size:16px}
+.tlm div.now{border-color:var(--ok);box-shadow:0 0 0 3px var(--ok-soft)}
+.refq{grid-column:1/-1;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;gap:12px;align-items:center;font-size:14px}
+.refq .av{width:40px;height:40px;font-size:12px}.refq b{display:block;font-size:14px}.refq s{text-decoration:none;color:var(--fg2);font-size:13px}
+.refq .tag{margin-left:auto}
+.wa{grid-column:1/-1;background:#e7fbe9;border-radius:14px;padding:12px 14px;display:flex;gap:12px;align-items:center}
+.wa .ic{width:38px;height:38px;border-radius:50%;background:#25d366;display:grid;place-items:center;flex:none}.wa .ic svg{width:22px;height:22px}
+.wa .bub{background:#fff;border-radius:12px;padding:10px 12px;font-size:14px;flex:1}.wa .bub b{display:block;font-size:12px;color:var(--fg3);margin-bottom:3px;font-weight:600}
+.wa .bb{display:flex;gap:6px;margin-top:8px}.wa .bb span{border:1px solid var(--line2);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600}.wa .bb span.y{background:var(--ok);border-color:var(--ok);color:#fff}
+.refw{margin-top:18px;background:var(--sunk);border-radius:16px;padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.refw b{display:block;font-size:15px}.refw s{text-decoration:none;font-size:13.5px;color:var(--fg2)}.refw a{margin-left:auto}
+/* caso + contrato */
+.caso-g{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+@media(max-width:860px){.caso-g{grid-template-columns:1fr}}
+.caso-g>div{border-radius:20px;padding:26px}.caso-a{background:#fff;border:1px solid var(--line)}.caso-b{background:var(--ink);color:#fff}
+.caso-g .k{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--fg3)}.caso-b .k{color:#a9a79e}
+.caso-g .big{font-family:var(--serif);font-size:64px;line-height:1;margin:10px 0 12px}.caso-b .big{color:#6fcf97}
+.caso-g p{font-size:16px;line-height:1.5}.caso-a p{color:var(--fg2)}.caso-a p b{color:var(--bad)}.caso-b p{color:#e6e4dd}
+.caso-g cite{display:block;font-style:normal;font-size:13px;color:var(--fg3);margin-top:12px}.caso-b cite{color:#a9a79e}
+.contract{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;max-width:860px;box-shadow:0 30px 60px -40px rgba(0,0,0,.3)}
+.ct-h{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:13.5px;color:var(--fg3);padding-bottom:16px;border-bottom:1px solid var(--line)}
+.ct-l{margin:18px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:15.5px;line-height:1.5;color:var(--fg2)}.ct-l b{color:var(--fg)}
+.ct-s{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
+@media(max-width:600px){.ct-s{grid-template-columns:1fr}}
+.ct-s s{text-decoration:none;display:block;font-size:12px;color:var(--fg3);margin-top:6px}
+.sig{display:block;border-bottom:2px solid var(--ink);padding:14px 4px 6px;font-family:var(--serif);font-size:22px;color:var(--fg3);cursor:pointer;min-height:48px}
+.sig.done{color:var(--fg);font-style:italic}.sig.done::after{content:' ✓';color:var(--ok);font-style:normal;font-size:16px}
+#sigC{color:var(--fg);font-style:italic;cursor:default}#sigC::after{content:' ✓';color:var(--ok);font-style:normal;font-size:16px}
 /* dolor: hoy contra con nosotros */
 .painsec{padding-top:clamp(40px,5vw,64px)}
 .vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
@@ -340,12 +400,12 @@ footer .in{display:flex;flex-wrap:wrap;gap:18px 36px;justify-content:space-betwe
   <div>
     <div class="eyebrow"><i></i><span>Software de contratación, instalado para</span>&nbsp;<b id="clientName"></b></div>
     <h1><span class="l1">Tu próximo</span><span class="l2"><span class="rot" id="rot">jefe de cocina</span>,</span><span class="l3">en tu restaurante<br>en 48 horas.</span></h1>
-    <p class="lede">Deja de cribar currículums. Nos dices a quién necesitas y tus condiciones. Buscamos, llamamos, filtramos y te traemos a tres que ya han dicho sí a tu sueldo, tu horario y tu fecha. Tú solo decides a quién entrevistas.</p>
+    <p class="lede">Se te cae alguien y el sábado tienes a otro en el pase. Nos dices el puesto, el sueldo y el cuadrante. Buscamos, llamamos, filtramos y te sentamos a tres que ya han dicho que sí. Tú eliges con quién te sientas. Nada de cribar papeles entre servicios.</p>
     <div class="cta"><a class="btn pri lg" href="#demo">Probar la demo</a><a class="btn lg" href="#how">Qué consigues</a></div>
     <div class="proof">
-      <div><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#1f7a4c" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1f7a4c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Ni agencia ni portal.</b> Software instalado en tu local, contrataciones ilimitadas</span></div>
-      <div><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#1f7a4c" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1f7a4c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Tres cualificados al 100 %,</b> con cara y vídeo, en 48 horas</span></div>
-      <div><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#1f7a4c" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1f7a4c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Firmado antes del primer día.</b> Si no se presenta, el siguiente va gratis</span></div>
+      <div><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#1f7a4c" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1f7a4c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Puesto cubierto en 48 horas.</b> Tres que pasan el filtro, no 150 currículums</span></div>
+      <div><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#1f7a4c" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1f7a4c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Cero plantones.</b> Sueldo, cuadrante y fecha firmados antes del primer servicio</span></div>
+      <div><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#1f7a4c" stroke-width="1.5"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1f7a4c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Ni agencia, ni ETT, ni portal.</b> La persona es tuya, en tu plantilla. Contrataciones ilimitadas</span></div>
     </div>
   </div>
   <div class="shot" id="shot">
@@ -353,24 +413,25 @@ footer .in{display:flex;flex-wrap:wrap;gap:18px 36px;justify-content:space-betwe
     <div class="cc" id="heroCard"></div>
   </div>
 </div></header>
+<div class="live wrap" id="live"></div>
 
 <section class="painsec"><div class="wrap">
   <h2>Hoy cribas. Con nosotros eliges.</h2>
   <div class="vs">
     <div class="vs-a"><div class="vs-h">Contratar hoy</div>
       <div class="vs-l">
-        <div><i>✕</i><span>Cuelgas la oferta y te llegan 150 currículums. Los cribas uno a uno entre servicios, y te comes las horas que le faltan al equipo</span></div>
+        <div><i>✕</i><span>Cuelgas la oferta y te llegan 150 currículums. Los cribas entre el almuerzo y la cena, mientras el equipo dobla para tapar el hueco</span></div>
         <div><i>✕</i><span><q>Solo viendo los currículums ya me entran vómitos.</q><small>Dueño, distribución y eventos, Barcelona</small></span></div>
-        <div><i>✕</i><span>Diez entrevistas sin cualificar para quedarte con uno. Por descarte, no por preferencia</span></div>
+        <div><i>✕</i><span>Diez entrevistas con gente que no sabe llevar un rango para quedarte con uno. Por descarte, no por preferencia</span></div>
         <div><i>✕</i><span>La agencia manda nueve y sale bien uno. A 500 € cada uno, 4.000 € por acierto</span></div>
-        <div><i>✕</i><span>Dicen que sí y el primer día no aparecen. Tu mejor camarero pierde el turno formando a una prueba que no vuelve</span></div>
+        <div><i>✕</i><span>Dicen que sí y el primer día te plantan. Y tu mejor camarero pierde el servicio formando a una prueba que no vuelve</span></div>
       </div></div>
     <div class="vs-b"><div class="vs-h">Con AltaSala</div>
       <div class="vs-s">
-        <div><b>1</b><span>Nos dices a quién necesitas y tus condiciones. Dos minutos</span></div>
-        <div><b>2</b><span>Te damos tres. Con cara, vídeo y lo que hemos comprobado</span></div>
+        <div><b>1</b><span>Nos dices el puesto, el sueldo y el cuadrante. Dos minutos</span></div>
+        <div><b>2</b><span>Te ponemos tres en la mesa. Con cara, vídeo, referencia y cuadrante</span></div>
         <div><b>3</b><span>Das el visto bueno. Un toque</span></div>
-        <div><b>4</b><span>El que acepta tus condiciones se sienta delante de ti en 48 horas, con experiencia comprobada y todo firmado antes de empezar</span></div>
+        <div><b>4</b><span>El que acepta tu sueldo y tu cuadrante se sienta delante de ti en 48 horas, con la oferta firmada antes del primer servicio</span></div>
       </div></div>
   </div>
 </div></section>
@@ -395,9 +456,9 @@ footer .in{display:flex;flex-wrap:wrap;gap:18px 36px;justify-content:space-betwe
 <section id="how"><div class="wrap">
   <h2>Qué consigues</h2>
   <div class="outs">
-    <div class="oc"><div class="top"><h3>Tres personas, no 150</h3><p>Nombras el puesto. En 48 horas tienes tres personas con lo que nos habéis dicho que miráis antes de nadie: dónde ha trabajado y cuánto duró, formación, idiomas comprobados, edad, y que acepta tus condiciones.</p></div><div class="stage sa" id="stageA"></div></div>
-    <div class="oc"><div class="top"><h3>Decides con un toque</h3><p>Entrevista o paso. Ese es todo tu trabajo. Cada ficha lleva su encaje con tu puesto y tus condiciones, su especialidad y los idiomas ya comprobados.</p></div><div class="stage sb" id="stageB"></div></div>
-    <div class="oc"><div class="top"><h3>Contactamos por ti</h3><p>De todo el pool, filtramos a los que encajan, les llamamos y nos quedamos con los que aceptan tus condiciones. Graban su vídeo y te llegan con la entrevista agendada y la oferta firmada.</p></div>
+    <div class="oc"><div class="top"><h3>Tres personas, no 150</h3><p>Nombras el puesto. En 48 horas tienes tres personas con lo que un dueño mira antes que nada: en qué casas ha estado y cuánto aguantó, formación, idiomas comprobados, edad, y que acepta tu sueldo y tu cuadrante.</p></div><div class="stage sa" id="stageA"></div></div>
+    <div class="oc"><div class="top"><h3>Decides con un toque</h3><p>Entrevista o paso. Ese es todo tu trabajo. Cada ficha lleva su encaje con tu puesto, su especialidad, los idiomas comprobados y el cuadrante que puede hacer.</p></div><div class="stage sb" id="stageB"></div></div>
+    <div class="oc"><div class="top"><h3>Contactamos por ti</h3><p>De todo el pool filtramos a los que encajan, les llamamos, llamamos a su último jefe y nos quedamos con los que aceptan tu sueldo y tu cuadrante. Graban su vídeo y te llegan con la entrevista agendada y la oferta firmada.</p></div>
       <div class="stage sc"><div class="grid" id="fgrid"></div><div class="cap" id="fcap"></div></div></div>
   </div>
 </div></section>
@@ -405,8 +466,8 @@ footer .in{display:flex;flex-wrap:wrap;gap:18px 36px;justify-content:space-betwe
 <section class="vid"><div class="wrap g2">
   <div class="phone"><span class="vtag">Vídeo de presentación · 1 min</span><video id="introVid" src="intro.mp4" poster="intro_poster.jpg" muted loop playsinline autoplay></video><span class="vname"><b>Muestra</b><s>Cada candidato graba el suyo</s></span><span class="vdur">0:17</span></div>
   <div>
-    <h2>Ponle cara antes de darle un turno.</h2>
-    <p class="lede" style="margin-top:14px">Cada candidato graba un vídeo selfie de un minuto presentándose, antes de la entrevista. Ves cómo habla, cómo se explica, qué actitud trae. Lo que hoy descubres en la entrevista, lo ves en un minuto y sin perder el turno.</p>
+    <h2>Ponle cara antes de darle un servicio.</h2>
+    <p class="lede" style="margin-top:14px">Cada candidato graba un vídeo selfie de un minuto presentándose, antes de la entrevista. Ves cómo habla, cómo se explica, qué actitud trae. Lo que hoy descubres a mitad de un día de prueba, lo ves en un minuto sin quemar a tu segundo formándole.</p>
     <div class="obj">
       <div class="a"><b>Lo que nos dicen los dueños</b>«Cuando los conozco en persona no me convencen. Por la actitud, por cómo se venden.» Y ya han perdido una tarde.</div>
       <div class="b"><b>Lo que cambia</b>Con el vídeo lo ves antes. Si no te convence, no hay entrevista. Si te convence, llega con todo confirmado.</div>
@@ -418,37 +479,44 @@ footer .in{display:flex;flex-wrap:wrap;gap:18px 36px;justify-content:space-betwe
 
 <section id="demo"><div class="wrap">
   <h2>Esto es lo que instalamos en tu local.</h2>
-  <p class="lede" style="margin-top:14px">Perfiles reales de <span class="city">Madrid</span>. Tres pantallas. Pruébalo.</p>
+  <p class="lede" style="margin-top:14px">Tu panel, tus puestos, perfiles reales de <span class="city">Madrid</span>. Pruébalo como si fuera tuyo.</p>
   <div class="demo">
     <div class="dtabs" role="tablist">
-      <button role="tab" aria-selected="true" onclick="tab(0)"><span class="n">1</span><b>Qué necesitas</b></button>
-      <button role="tab" aria-selected="false" onclick="tab(1)"><span class="n">2</span><b>Tus tres</b></button>
-      <button role="tab" aria-selected="false" onclick="tab(2)"><span class="n">3</span><b>Los estamos contactando</b><span class="cnt" id="cnt3" hidden>0</span></button>
+      <button role="tab" aria-selected="true" onclick="tab(0)"><span class="n">1</span><b>Tu panel</b></button>
+      <button role="tab" aria-selected="false" onclick="tab(1)"><span class="n">2</span><b>Abrir un puesto</b></button>
+      <button role="tab" aria-selected="false" onclick="tab(2)"><span class="n">3</span><b>Tus tres</b></button>
+      <button role="tab" aria-selected="false" onclick="tab(3)"><span class="n">4</span><b>Los estamos contactando</b><span class="cnt" id="cnt3" hidden>0</span></button>
     </div>
     <div class="pane on" id="pane0">
-      <h3>¿A quién necesitas?</h3><p class="sub">Toca un puesto, pon tus condiciones y pulsa el botón.</p>
+      <div class="ph2"><div><h3 id="panelH"></h3><p class="sub" id="panelS"></p></div><button class="btn pri" onclick="tab(1)">+ Abrir un puesto</button></div>
+      <div class="jobs" id="jobs"></div>
+      <div class="kpis" id="kpis"></div>
+    </div>
+    <div class="pane" id="pane1">
+      <h3>¿A quién te falta?</h3><p class="sub">Toca el puesto, pon sueldo, fecha y cuadrante, y pulsa el botón.</p>
       <div class="roles" id="roles"></div>
-      <div class="condw"><div class="ch"><b>Tus condiciones</b><span>Cada candidato las escucha por teléfono antes de que tú hagas nada.</span></div>
+      <div class="condw"><div class="ch"><b>Tus condiciones</b><span>Cada candidato las escucha por teléfono antes de que tú muevas un dedo.</span></div>
       <div class="cond">
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M14 3H8a4 4 0 000 8h2M5 8h11M5 12h10M9 21c4 0 7-3 7-7"/></svg><label>Sueldo bruto al mes</label><input type="text" id="cPay" placeholder="p. ej. 2.400"></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><label>Fecha de inicio</label><input type="text" id="cStart" placeholder="p. ej. ya, o en 3 semanas"></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><label>Días y turnos</label><input type="text" id="cRoster" placeholder="p. ej. 5 días, libra lunes y martes"></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><label>Cuadrante</label><input type="text" id="cRoster" placeholder="p. ej. partido, libra lunes y martes"></div>
       </div>
       <div class="salhint" id="salhint"></div></div>
-      <div class="go"><button class="btn pri lg" onclick="goShort()">Enséñame mis tres</button><span class="small">Tres personas, con lo que hemos comprobado. Luego dices sí o no.</span><button id="venueBtn" onclick="setup()"></button></div>
+      <div class="go"><button class="btn pri lg" onclick="goShort()">Enséñame mis tres</button><span class="small">Tres personas con lo que hemos comprobado. Luego dices sí o no.</span><button id="venueBtn" onclick="setup()"></button></div>
     </div>
-    <div class="pane" id="pane1">
+    <div class="pane" id="pane2">
       <div class="sov" id="sov" hidden></div>
       <h3 id="t3h"></h3><p class="sub" id="t3s"></p>
       <div class="basis" id="basis"></div>
       <div class="top3" id="top3"></div>
-      <div class="moreh"><b id="moreN"></b><span>más en el pool para este puesto</span><input type="text" id="q" placeholder="Buscar: pastelería, japonés, inglés, Four Seasons…" autocomplete="off"></div>
+      <div class="moreh"><b id="moreN"></b><span>más en el pool para este puesto</span><input type="text" id="q" placeholder="Buscar: pastelería, japonés, inglés, Zalacaín…" autocomplete="off"></div>
       <div class="rows" id="rows"></div>
     </div>
-    <div class="pane" id="pane2">
-      <h3>Estamos en ello.</h3><p class="sub">Todos a los que dijiste que sí, en directo. Llamada de un minuto, cualificado, acepta tus condiciones, vídeo recibido, entrevista agendada y firmada. Tú no haces nada hasta el último paso.</p>
+    <div class="pane" id="pane3">
+      <h3>Estamos en ello.</h3><p class="sub">Cada persona a la que dijiste que sí, con la hora de cada paso. Llamada de un minuto, su último jefe al teléfono, tu sueldo y tu cuadrante aceptados, vídeo, entrevista firmada. Tú no haces nada hasta el último paso.</p>
       <div class="cl" id="clist"></div>
-      <p class="sim">Demo: las respuestas son simuladas. En tu versión instalada son llamadas reales de nuestro equipo.</p>
+      <div class="refw" id="refw"></div>
+      <p class="sim">Demo: las respuestas, referencias y cuadrantes de esta pantalla son simulados. En tu versión instalada son llamadas reales de nuestro equipo, con audio y hora.</p>
     </div>
   </div>
 </div></section>
@@ -462,13 +530,31 @@ footer .in{display:flex;flex-wrap:wrap;gap:18px 36px;justify-content:space-betwe
   <div class="acts" id="tacts" hidden><button class="btn pri" onclick="addPassed()">Añadir los que pasan a mi pool</button></div>
 </div></section>
 
+<section class="caso"><div class="wrap">
+  <h2>El primer cliente ya está dentro.</h2>
+  <div class="caso-g">
+    <div class="caso-a"><div class="k">Antes</div>
+      <div class="big">9 → 1</div>
+      <p>Nueve incorporaciones por agencia, una salió bien. A 500 € cada una, <b>4.000 € por acierto</b>. "Solo viendo los currículums ya me entran vómitos."</p>
+      <cite>Borja, parada en La Boquería, distribución a hoteles y eventos. Barcelona</cite></div>
+    <div class="caso-b"><div class="k">Con AltaSala</div>
+      <div class="big">3</div>
+      <p>Tres candidatos cualificados al 100 % en la mesa el lunes. Él elige por preferencia, no por descarte. Paga cuando empieza el que elija.</p>
+      <cite>Primer cliente, octubre de 2026</cite></div>
+  </div>
+</div></section>
+
 <section id="garantia"><div class="wrap">
-  <h2>La garantía</h2>
-  <p class="lede" style="margin-top:14px">Lo que un dueño nos pidió, en sus palabras: “una plantilla cualificada y que se te presente en 24 horas”. Esto es lo que firmamos.</p>
-  <div class="gar">
-    <div class="gc dark"><div class="k">Se presenta</div><b class="big">Oferta y fecha firmadas antes del primer día</b><p>Nadie llega a tu entrevista sin haber firmado por escrito sueldo, días y fecha de inicio. Si no aparece, el siguiente va gratis.</p></div>
-    <div class="gc"><div class="k">Cualificado al 100 %</div><b class="big">Experiencia, idiomas y actitud comprobados antes</b><p>Experiencia contrastada con sus casas, idiomas comprobados en la pre-entrevista, vídeo de presentación antes de que lo veas. Tú eliges por preferencia, no por descarte.</p></div>
-    <div class="gc"><div class="k">Dura</div><b class="big">Si se va en los primeros 60 días, el siguiente sin coste</b><p>Buscamos al siguiente corrigiendo lo que falló, hasta acertar. Sin volver a empezar de cero y sin volver a pagar.</p></div>
+  <h2>La garantía, firmada por los dos.</h2>
+  <p class="lede" style="margin-top:14px">Lo que un dueño nos pidió, en sus palabras: “una plantilla cualificada y que se te presente en 24 horas”. Esto es lo que firmamos contigo, y lo que firma el candidato antes de pisar tu local.</p>
+  <div class="contract">
+    <div class="ct-h"><span class="wm chip">AltaSala</span><span>Compromiso de servicio · <span class="city">Madrid</span> · 2026</span></div>
+    <ol class="ct-l">
+      <li><b>Se presenta.</b> Nadie llega a tu entrevista sin haber firmado por escrito sueldo, cuadrante y fecha de inicio. Si te planta, el siguiente va gratis.</li>
+      <li><b>Sabe hacerlo.</b> Experiencia contrastada con sus casas, su último jefe al teléfono, idiomas comprobados hablando en la pre-entrevista, vídeo de un minuto antes de que lo veas.</li>
+      <li><b>Se queda.</b> Si se va en los primeros 60 días, buscamos al siguiente corrigiendo lo que falló. Sin volver a pagar.</li>
+    </ol>
+    <div class="ct-s"><div><span class="sig" id="sigA" onclick="sign('A')">Firmar</span><s>El local</s></div><div><span class="sig" id="sigB" onclick="sign('B')">Firmar</span><s>El candidato</s></div><div><span class="sig" id="sigC">AltaSala</span><s>Nosotros</s></div></div>
   </div>
 </div></section>
 
@@ -511,7 +597,7 @@ const ROLES=[
  ['Otra cosa',/./,'<path d="M14 4v20M4 14h20"/>','escríbelo abajo',[1500,3800]]];
 const BAND=r=>(ROLES.find(x=>x[0]===r)||ROLES[7])[4];
 function roleOf(p){return (ROLES.find(x=>x[0]!=='Otra cosa'&&x[1].test(p.r))||ROLES[7])[0]}
-const fmtE=n=>n.toLocaleString('es-ES')+' €';
+const fmtE=n=>Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';
 
 /* condiciones → números */
 function payM(){const raw=(ST.pay||'').toLowerCase().replace(/\s/g,'');if(!raw)return null;let k=/k\b/.test(raw);let s=raw.replace(/[€k]/g,'');s=s.replace(/\.(?=\d{3}\b)/g,'').replace(',','.');let v=parseFloat(s);if(isNaN(v))return null;if(k)v*=1000;if(v>=10000)v=v/14;if(v<100)v*=1000;return Math.round(v)}
@@ -539,55 +625,79 @@ function stages(){const top=POOL.filter(p=>p.ph).sort((a,b)=>base(b)-base(a));
   document.getElementById('stageB').innerHTML=`<div class="deck">${top.slice(3,6).map((p,i)=>`<div class="cd"><div class="ph" style="background-image:url('${p.ph}')"></div><span class="mt"><b>${[86,91,88][i]}%</b>encaje</span><div class="tx"><b>${esc(p.n)}</b><s>${esc(p.r)} · ${esc(p.v)}</s><div class="tags"><span class="ok">✓ ${p.en?'Inglés':'Castellano'}</span><span>${esc(p.sp||'')}</span></div></div></div>`).join('')}</div><div class="yn"><span>Paso</span><span class="y">Entrevista</span></div>`;
   const faces=top.slice(0,12);const keep=new Set([1,6,10]);
   document.getElementById('fgrid').innerHTML=faces.map((p,i)=>`<div class="fc ${keep.has(i)?'keep':''}"><img alt="" src="${p.ph}">${keep.has(i)?`<span class="ring"></span><span class="tk"><i>${OK16}</i><i>${OK16}</i><i>${OK16}</i></span>`:''}</div>`).join('');
-  document.getElementById('fcap').innerHTML=`<span><b>2.500</b> en el pool de ${CITY} para tu puesto</span><span>Filtramos por experiencia, formación, idiomas y tus condiciones</span><span>Les llamamos. <b>Tres</b> aceptan sueldo, días y fecha</span><span>Graban su vídeo. <b>Entrevista agendada y firmada</b></span>`}
+  document.getElementById('fcap').innerHTML=`<span><b>2.500</b> en el pool de ${CITY} para tu puesto</span><span>Filtramos por experiencia, formación, idiomas y tus condiciones</span><span>Les llamamos. <b>Tres</b> aceptan tu sueldo y tu cuadrante</span><span>Graban su vídeo. <b>Entrevista agendada y firmada</b></span>`}
 
 /* demo */
-function tab(n){document.querySelectorAll('.dtabs button').forEach((b,i)=>b.setAttribute('aria-selected',i===n));document.querySelectorAll('.pane').forEach((p,i)=>p.classList.toggle('on',i===n));if(n===1)run();if(n===2)contacting();document.getElementById('demo').scrollIntoView({behavior:'smooth',block:'start'})}
+ST.jobs=ST.jobs||{};
+function tab(n){document.querySelectorAll('.dtabs button').forEach((b,i)=>b.setAttribute('aria-selected',i===n));document.querySelectorAll('.pane').forEach((p,i)=>p.classList.toggle('on',i===n));if(n===0)panel();if(n===2)run();if(n===3)contacting();document.getElementById('demo').scrollIntoView({behavior:'smooth',block:'start'})}
+const COSTH=parseFloat(Q.get('costehora'))||15.4; /* coste hora que usa el sector (Asun). Horas descubiertas al día y recargo por doblar y extras. */
+const costDay=()=>Math.round(8*COSTH*1.35);
+const dayStr=d=>d===1?'1 día':d+' días';
+function jobStage(role){const ys=ST.yes.map(byId).filter(p=>p&&roleOf(p)===role);if(!ys.length)return 0;const st=Math.max(...ys.map(p=>stageOf(p)));return st>=5?3:st>=2?2:1}
+function stageOf(p){const age=(Date.now()-(ST['t'+p.i]||0))/1000;return age<6?1:age<12?2:age<18?3:age<23?4:5}
+function panel(){const jobs=Object.entries(ST.jobs);const open=jobs.filter(([r,j])=>!j.done).length;
+  document.getElementById('panelH').textContent=`${ST.venue||('Tu local en '+CITY)} · ${open?open+(open===1?' puesto abierto':' puestos abiertos'):'sin puestos abiertos'}`;
+  document.getElementById('panelS').textContent=open?'Lo que te cuesta cada hueco mientras está abierto, con tu coste hora. Toca un puesto para ver a tus tres.':'Abre el primer puesto. Dos minutos. Luego lo ves aquí con su coste al día.';
+  const ST_LBL=['Buscando','Llamando','Entrevista jueves','Cubierto'];
+  document.getElementById('jobs').innerHTML=jobs.map(([r,j])=>{const days=Math.max(1,Math.round((Date.now()-j.t)/86400000)+ (j.d0||0));const s=j.done?3:jobStage(r);const ys=ST.yes.map(byId).filter(p=>p&&roleOf(p)===r);const cost=costDay()*days;
+    return `<div class="job" onclick="ST.role='${r}';save();pinta();tab(2)"><div class="jt"><b class="rn">${r}</b><span class="st2 s${s}">${ST_LBL[s]}</span></div>
+    <div class="cost ${s===3?'ok':''}"><b>${s===3?'0 €':fmtE(cost)}</b><s>${s===3?'ya cubierto':`en extras y horas dobladas · ${dayStr(days)} abierto`}</s></div>
+    <div class="meta">${j.pay?fmtE(j.pay)+' brutos/mes':'Sueldo por definir'} · ${esc(j.start||'inicio por definir')} · ${esc(j.roster||'cuadrante por definir')}</div>
+    <div class="faces">${ys.slice(0,3).map(p=>avHTML(p)).join('')}${ys.length?'':'<span class="small">Aún sin candidatos elegidos</span>'}</div></div>`}).join('')+`<div class="job add" onclick="tab(1)"><div><b class="rn" style="font-size:20px">+ Abrir un puesto</b><div class="small" style="margin-top:6px">Puesto, sueldo, cuadrante. Dos minutos.</div></div></div>`;
+  const totalCost=jobs.filter(([r,j])=>!j.done&&jobStage(r)<3).reduce((a,[r,j])=>a+costDay()*Math.max(1,Math.round((Date.now()-j.t)/86400000)+(j.d0||0)),0);
+  document.getElementById('kpis').innerHTML=`<div class="kpi"><b>${POOL.length}</b><s>perfiles en ${CITY}, listos para llamar</s></div><div class="kpi"><b>${POOL.filter(p=>p.open).length}</b><s>buscan activamente ahora</s></div><div class="kpi"><b>${ST.yes.length}</b><s>a los que has dicho sí</s></div><div class="kpi"><b style="color:${totalCost?'var(--bad)':'var(--ok)'}">${fmtE(totalCost)}</b><s>te están costando los huecos abiertos</s></div>`}
+function live(){const el=document.getElementById('live');const rest=POOL.filter(p=>!p.hotel).length;el.innerHTML=`<div><b>${POOL.length}</b> perfiles de cocina, sala, barra y bodega en ${CITY}</div><div><b class="g">${POOL.filter(p=>p.open).length}</b> buscan activamente hoy</div><div><b>${rest}</b> en restaurantes, no en hoteles</div><div><b>${POOL.filter(p=>p.ph).length}</b> con cara</div>`}
 function pinta(){document.getElementById('roles').innerHTML=ROLES.map(([r,rx,ic,sub])=>{const ppl=r==='Otra cosa'?all():all().filter(p=>rx.test(p.r));const faces=ppl.filter(p=>p.ph).slice(0,4);const open=ppl.filter(p=>p.open).length;
     return `<button class="rb" aria-pressed="${ST.role===r}" onclick="pick('${r}')"><div class="rbt"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ic}</svg><span class="chk"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><b>${r}</b><small>${sub}</small><div class="rbf"><span class="faces">${faces.map(p=>avHTML(p)).join('')}</span><span class="cnt2">${ppl.length} en el pool${open?` · ${open} buscan`:''}</span></div></button>`}).join('');
-  document.getElementById('venueBtn').textContent=ST.venue?`Local: ${ST.venue}`:'Configurar para un local';document.getElementById('clientName').textContent=ST.venue||(CITY+' centro · demo');
+  document.getElementById('venueBtn').textContent=ST.venue?`Local: ${ST.venue}`:'Poner el nombre de tu local';document.getElementById('clientName').textContent=ST.venue||(CITY+' centro · demo');
   ['Pay','Start','Roster'].forEach(k=>{document.getElementById('c'+k).value=ST[k.toLowerCase()]||''});
   const n=ST.yes.length;const c=document.getElementById('cnt3');c.hidden=!n;c.textContent=n;salhint()}
 function salhint(){const band=BAND(ST.role),k=payM(),el=document.getElementById('salhint');const r=ST.role==='Otra cosa'?'este puesto':ST.role.toLowerCase();
-  if(k==null){el.className='salhint';el.innerHTML=`Salario orientativo en ${CITY} para <b>${esc(r)}</b>: <b>${fmtE(band[0])} a ${fmtE(band[1])}</b> brutos al mes. Si quieres talento, no bajes de ${fmtE(band[0])}.`}
-  else if(k<band[0]*.85){el.className='salhint warn';el.innerHTML=`Con <b>${fmtE(k)}</b> al mes vas por debajo del mercado de ${esc(r)} en ${CITY} (<b>${fmtE(band[0])} a ${fmtE(band[1])}</b>). Si quieres talento, el mínimo es ${fmtE(band[0])}. Tenemos perfiles de otro nivel que sí aceptan ese sueldo. ¿Seguimos con ellos?`}
-  else if(k<band[0]){el.className='salhint';el.innerHTML=`<b>${fmtE(k)}</b> está algo justo para ${esc(r)} en ${CITY} (mercado <b>${fmtE(band[0])} a ${fmtE(band[1])}</b>). Encontraremos, pero menos dirán que sí.`}
-  else{el.className='salhint';el.innerHTML=`<b>${fmtE(k)}</b> al mes está dentro del mercado de ${esc(r)} en ${CITY} (<b>${fmtE(band[0])} a ${fmtE(band[1])}</b>). Todo el pool puede decir que sí.`}}
+  if(k==null){el.className='salhint';el.innerHTML=`Lo que se paga en ${CITY} por un <b>${esc(r)}</b>: <b>${fmtE(band[0])} a ${fmtE(band[1])}</b> brutos al mes. Si quieres a alguien que aguante, no bajes de ${fmtE(band[0])}.`}
+  else if(k<band[0]*.85){el.className='salhint warn';el.innerHTML=`Con <b>${fmtE(k)}</b> al mes vas por debajo de lo que se paga en ${CITY} por un ${esc(r)} (<b>${fmtE(band[0])} a ${fmtE(band[1])}</b>). Los buenos no cogen el teléfono por eso. Tenemos perfiles de otro nivel que sí aceptan ese sueldo. ¿Seguimos con ellos?`}
+  else if(k<band[0]){el.className='salhint';el.innerHTML=`<b>${fmtE(k)}</b> está algo justo para un ${esc(r)} en ${CITY} (<b>${fmtE(band[0])} a ${fmtE(band[1])}</b>). Encontraremos, pero menos dirán que sí.`}
+  else{el.className='salhint';el.innerHTML=`<b>${fmtE(k)}</b> al mes está en lo que se paga por un ${esc(r)} en ${CITY} (<b>${fmtE(band[0])} a ${fmtE(band[1])}</b>). Todo el pool puede decir que sí.`}}
 function pick(r){ST.role=r;save();pinta()}
-function goShort(){if(!ST.role){ST.role='Jefe de cocina';save();pinta()}tab(1);if(ST.role==='Otra cosa')document.getElementById('q').focus();searchAnim()}
+function goShort(){if(!ST.role){ST.role='Jefe de cocina';save();pinta()}ST.jobs[ST.role]=Object.assign(ST.jobs[ST.role]||{t:Date.now(),d0:0},{pay:payM(),start:ST.start,roster:ST.roster});save();tab(2);if(ST.role==='Otra cosa')document.getElementById('q').focus();searchAnim()}
 let sT=[];function searchAnim(){sT.forEach(clearTimeout);sT=[];const ov=document.getElementById('sov');const rx=ROLES.find(x=>x[0]===ST.role);const ppl=all().filter(p=>!rx||rx[1].test(p.r));const acc=ppl.filter(p=>match(p)>=60).length;
   const totals=CITY==='Barcelona'?{'Jefe de cocina':'1.376','Segundo de cocina':'1.376','Jefe de partida':'1.376','Jefe de sala':'2.785','Camarero':'2.785','Sumiller':'2.208','Barra':'2.208','Otra cosa':'6.000'}:{'Jefe de cocina':'3.491','Segundo de cocina':'1.284','Jefe de partida':'1.284','Jefe de sala':'1.722','Camarero':'41.153','Sumiller':'431','Barra':'2.085','Otra cosa':'50.000'};
-  const rows=[[SRCICON.LinkedIn+'<b style="margin-left:6px;font-size:14px">LinkedIn</b>',`${totals[ST.role]||'…'} perfiles de ${ST.role.toLowerCase()} en ${CITY} revisados`],[SRCICON['Tu bandeja']+'<b style="margin-left:6px;font-size:14px">Tu bandeja de CV</b>',`${OWN.length} currículums tuyos revisados`],['<svg viewBox="0 0 96 24"><text x="0" y="19" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="21" fill="#167DB7">InfoJobs</text></svg>','Tu oferta publicada. Las candidaturas entran al filtro'],['<svg viewBox="0 0 96 24"><text x="0" y="19" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="21" fill="#E8542D">Turijobs</text></svg>','Tu oferta publicada. Las candidaturas entran al filtro'],['<svg viewBox="0 0 96 24"><text x="0" y="19" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="21" fill="#2B2B2B">Hosteleo</text></svg>','Tu oferta publicada. Las candidaturas entran al filtro']];
-  ov.hidden=false;ov.innerHTML=`<div class="bar"><i id="sbar"></i></div><div class="sh"><span class="sp"></span><span>Buscando ${esc(ST.role.toLowerCase())} en todas las fuentes…</span></div><div class="sr">${rows.map(([ic,t])=>`<div><span>${ic}</span><span class="t">${esc(t)}</span><span class="k">${OK16}</span></div>`).join('')}</div><div class="sf" id="sf"><div><b>${esc(totals[ST.role]||'2.500')}</b><s>en el pool</s></div><i>→</i><div><b>${Math.max(acc,3)}</b><s>aceptan tus condiciones</s></div><i>→</i><div><b>3</b><s>entrevistas cualificadas</s></div></div>`;
+  const rows=[[SRCICON.LinkedIn+'<b style="margin-left:6px;font-size:14px">LinkedIn</b>',`${totals[ST.role]||'…'} perfiles de ${ST.role.toLowerCase()} en ${CITY} revisados`],[SRCICON['Tu bandeja']+'<b style="margin-left:6px;font-size:14px">Tu bandeja de CV</b>',`${OWN.filter(p=>p.src==='Tu bandeja').length} currículums tuyos revisados`],['<svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" stroke="#111" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="#111" stroke-width="1.8"/></svg><b style="margin-left:6px;font-size:14px">Referidos</b>',`${OWN.filter(p=>p.src==='Referido').length} nombres que nos han dado otros candidatos y tu equipo`],['<svg viewBox="0 0 96 24"><text x="0" y="19" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="21" fill="#167DB7">InfoJobs</text></svg>','Tu oferta, publicada por nosotros. Las candidaturas entran al filtro'],['<svg viewBox="0 0 96 24"><text x="0" y="19" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="21" fill="#E8542D">Turijobs</text></svg>','Tu oferta, publicada por nosotros. Las candidaturas entran al filtro'],['<svg viewBox="0 0 96 24"><text x="0" y="19" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="21" fill="#2B2B2B">Hosteleo</text></svg>','Tu oferta, publicada por nosotros. Las candidaturas entran al filtro']];
+  ov.hidden=false;ov.innerHTML=`<div class="bar"><i id="sbar"></i></div><div class="sh"><span class="sp"></span><span>Buscando ${esc(ST.role.toLowerCase())} para ${esc(venueName())}…</span></div><div class="sr">${rows.map(([ic,t])=>`<div><span>${ic}</span><span class="t">${esc(t)}</span><span class="k">${OK16}</span></div>`).join('')}</div><div class="sf" id="sf"><div><b>${esc(totals[ST.role]||'2.500')}</b><s>revisados</s></div><i>→</i><div><b>${Math.max(acc,3)}</b><s>aceptarían tu sueldo y cuadrante</s></div><i>→</i><div><b>3</b><s>en tu mesa</s></div></div>`;
   const cells=ov.querySelectorAll('.sr div');const top3=document.getElementById('top3'),rows2=document.getElementById('rows');top3.style.opacity=rows2.style.opacity='0';
-  cells.forEach((c,i)=>sT.push(setTimeout(()=>{c.classList.add('on');document.getElementById('sbar').style.width=((i+1)/(cells.length+1)*100)+'%'},350+i*380)));
-  sT.push(setTimeout(()=>{document.getElementById('sf').classList.add('on');document.getElementById('sbar').style.width='100%'},2400));
-  sT.push(setTimeout(()=>{ov.hidden=true;top3.style.transition=rows2.style.transition='opacity .4s';top3.style.opacity=rows2.style.opacity='1';document.getElementById('t3h').scrollIntoView({behavior:'smooth',block:'start'})},3600))}
+  cells.forEach((c,i)=>sT.push(setTimeout(()=>{c.classList.add('on');document.getElementById('sbar').style.width=((i+1)/(cells.length+1)*100)+'%'},300+i*330)));
+  sT.push(setTimeout(()=>{document.getElementById('sf').classList.add('on');document.getElementById('sbar').style.width='100%'},2500));
+  sT.push(setTimeout(()=>{ov.hidden=true;top3.style.transition=rows2.style.transition='opacity .4s';top3.style.opacity=rows2.style.opacity='1';document.getElementById('t3h').scrollIntoView({behavior:'smooth',block:'start'})},3700))}
 const FXI={exp:'<path d="M3 7h10M3 11h7M3 15h5" stroke-linecap="round"/><rect x="2" y="3" width="12" height="14" rx="2"/>',stay:'<circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2" stroke-linecap="round"/>',train:'<path d="M2 7l6-3 6 3-6 3z"/><path d="M5 8.5V12c0 1 1.5 2 3 2s3-1 3-2V8.5" stroke-linecap="round"/>',proof:'<path d="M8 2l1.8 3.7 4 .6-2.9 2.8.7 4L8 11.2 4.4 13.1l.7-4L2.2 6.3l4-.6z" stroke-linejoin="round"/>',open:'<circle cx="8" cy="8" r="6"/><path d="M5.5 8.5l1.8 1.8L10.8 6.5" stroke-linecap="round" stroke-linejoin="round"/>'};
-const FXL={exp:'Experiencia',stay:'Compromiso',train:'Formación',proof:'Encaje probado',open:'Disponibilidad'};
+const FXL={exp:'Casas',stay:'Aguante',train:'Formación',proof:'Encaje probado',open:'Disponibilidad'};
 function fxLine(k,v){return `<div><svg viewBox="0 0 16 16" fill="none" stroke="#1f7a4c" stroke-width="1.5">${FXI[k]||FXI.proof}</svg><span><s>${FXL[k]}</s>${esc(v)}</span></div>`}
-function xpRows(p){const rows=[];(p.f||[]).forEach(([k,v])=>rows.push([FXL[k],v]));const w=whyAccept(p);rows.push(['Por qué diría que sí',w.length?w.join(' · '):'Se confirma en la llamada de un minuto']);const a=ageEst(p);rows.push(['Edad',a?a+(/\d{2} años$/.test(a)&&!/unos/.test(a)?'':' · estimada por su carrera'):'se confirma en la llamada']);rows.push(['Especialidad',p.sp||'—']);rows.push(['Idiomas',(p.en?'Inglés':'Castellano')+(p.langs&&p.langs.length?', '+p.langs.filter(l=>!/ingl|engl/.test(l)).map(l=>l[0].toUpperCase()+l.slice(1)).join(', '):'')+' · comprobados al 100 % en la pre-entrevista']);rows.push(['Fuente',p.src+(p.src==='LinkedIn'?' · '+CONFIG.pulledOn:'')]);return rows.map(([k,v])=>`<div><s>${esc(k)}</s><span>${esc(v)}</span></div>`).join('')}
+/* cuadrante: antes de la llamada, gris. Después, el que puede hacer (simulado en la demo a partir de tu cuadrante). */
+const DAYS=['L','M','X','J','V','S','D'],TURN=['Mañana','Tarde','Noche'];
+function cuadHTML(p,known){const r=(ST.roster||'').toLowerCase();let off=[];if(/lunes/.test(r))off.push(0);if(/martes/.test(r))off.push(1);if(/mi[eé]rcoles/.test(r))off.push(2);if(/jueves/.test(r))off.push(3);if(/viernes/.test(r))off.push(4);if(/s[aá]bado/.test(r))off.push(5);if(/domingo/.test(r))off.push(6);if(!off.length)off=[(p.i*7)%7,((p.i*7)%7+1)%7];
+  const noon=/partido|doblar/.test(r);
+  return `<div class="cuad"><div class="lbl2"><span>Cuadrante</span><i>${known?'puede hacer el tuyo':'lo confirmamos en la llamada'}</i></div><div class="grid7"><span></span>${DAYS.map(d=>`<span>${d}</span>`).join('')}${TURN.map((t,ti)=>`<span class="rl2">${t}</span>`+DAYS.map((d,di)=>`<span class="c ${known?(off.includes(di)?'off':(ti===0&&!noon?'':'on')):''}"></span>`).join('')).join('')}</div></div>`}
+function xpRows(p){const rows=[];(p.f||[]).forEach(([k,v])=>rows.push([FXL[k],v]));const w=whyAccept(p);rows.push(['Por qué diría que sí',w.length?w.join(' · '):'Se confirma en la llamada de un minuto']);const a=ageEst(p);rows.push(['Edad',a?a+(/\d{2} años$/.test(a)&&!/unos/.test(a)?'':' · estimada por su carrera'):'se confirma en la llamada']);rows.push(['Especialidad',p.sp||'—']);rows.push(['Idiomas',(p.en?'Inglés':'Castellano')+(p.langs&&p.langs.length?', '+p.langs.filter(l=>!/ingl|engl/.test(l)).map(l=>l[0].toUpperCase()+l.slice(1)).join(', '):'')+' · comprobados hablando en la pre-entrevista']);rows.push(['Referencia',p.ref||'Llamamos a su último jefe antes de la entrevista']);rows.push(['Fuente',p.src+(p.src==='LinkedIn'?' · '+CONFIG.pulledOn:'')+(p.refBy?' · referido por '+p.refBy:'')]);return rows.map(([k,v])=>`<div><s>${esc(k)}</s><span>${esc(v)}</span></div>`).join('')}
 function basisText(){const k=payM(),u=urgent(),band=BAND(ST.role),r=ST.role==='Otra cosa'?'este puesto':ST.role.toLowerCase();const el=document.getElementById('basis');let cls='',txt='';
-  if(k!=null&&k<band[0]*.85){cls='warn';txt=`Con ${fmtE(k)} al mes nadie de nivel ${r} dice que sí en ${CITY}. Mercado: ${fmtE(band[0])} a ${fmtE(band[1])}. Te enseño a los tres con más probabilidad de escuchar: buscan activamente o están al principio de su carrera. Si subes a ${fmtE(band[0])}, cambia la lista.`}
-  else if(k!=null){cls='ok';txt=`Tus ${fmtE(k)} al mes están dentro del mercado de ${r} en ${CITY} (${fmtE(band[0])} a ${fmtE(band[1])}). Todos los de aquí pueden decir que sí.`}
-  if(u===2)txt+=(txt?' ':'')+'Inicio en menos de dos semanas: primero los que buscan activamente o acaban de dejar su puesto.';
+  if(k!=null&&k<band[0]*.85){cls='warn';txt=`Con ${fmtE(k)} al mes ningún ${r} de nivel coge el teléfono en ${CITY}. Se paga ${fmtE(band[0])} a ${fmtE(band[1])}. Te enseño a los tres con más probabilidad de escuchar: buscan activamente o están empezando. Si subes a ${fmtE(band[0])}, cambia la lista.`}
+  else if(k!=null){cls='ok';txt=`Tus ${fmtE(k)} al mes están en lo que se paga por un ${r} en ${CITY} (${fmtE(band[0])} a ${fmtE(band[1])}). Todos los de aquí pueden decir que sí.`}
+  if(u===2)txt+=(txt?' ':'')+'Lo necesitas ya: primero los que buscan activamente.';
   el.className='basis'+(txt?' on '+cls:'');el.textContent=txt}
 function run(){const q=(document.getElementById('q').value||'').toLowerCase().trim();const rx=ROLES.find(x=>x[0]===ST.role);
-  let r=all().filter(p=>!ST.no.includes(p.i)&&!ST.yes.includes(p.i)).filter(p=>{if(rx&&rx[0]!=='Otra cosa'&&!rx[1].test(p.r))return false;if(q&&!(p.n+' '+p.r+' '+p.rt+' '+p.v+' '+p.s+' '+(p.f||[]).map(x=>x[1]).join(' ')+' '+(p.langs||[]).join(' ')).toLowerCase().includes(q))return false;return true}).map(p=>({p,m:match(p)+(p.ph?3:0)+Math.min(4,(p.f||[]).length)})).sort((a,b)=>b.m-a.m);
+  let r=all().filter(p=>!ST.no.includes(p.i)&&!ST.yes.includes(p.i)).filter(p=>{if(rx&&rx[0]!=='Otra cosa'&&!rx[1].test(p.r))return false;if(q&&!(p.n+' '+p.r+' '+p.rt+' '+p.v+' '+p.s+' '+(p.f||[]).map(x=>x[1]).join(' ')+' '+(p.langs||[]).join(' ')).toLowerCase().includes(q))return false;return true}).map(p=>({p,m:match(p)+(p.ph?3:0)+Math.min(4,(p.f||[]).length)+(p.src==='Referido'?6:0)})).sort((a,b)=>b.m-a.m);
   const top=r.slice(0,3),rest=r.slice(3);basisText();
-  document.getElementById('t3h').textContent='Tus tres';document.getElementById('t3s').textContent=`Mejor encaje para ${ST.role==='Otra cosa'?(q||'…'):ST.role.toLowerCase()} en ${CITY} ahora mismo. Toca una foto para la ficha, o decide aquí.`;
+  document.getElementById('t3h').textContent=`Tus tres para ${venueName()}`;document.getElementById('t3s').textContent=`Mejor encaje para ${ST.role==='Otra cosa'?(q||'…'):ST.role.toLowerCase()} en ${CITY} ahora mismo. Toca una foto para la ficha, o decide aquí.`;
   document.getElementById('top3').innerHTML=top.length?top.map(({p})=>{const f=(p.f||[]);const two=[f.find(x=>x[0]==='exp'),f.find(x=>x[0]==='proof')||f.find(x=>x[0]==='train')||f.find(x=>x[0]==='stay')].filter(Boolean);const w=whyAccept(p);return `<div class="tc" id="tc${p.i}">
     <div class="ph" onclick="card(${p.i})">${bigPh(p)}<span class="src">${SRCICON[p.src]||SRCICON['Tu bandeja']}${esc(p.src)}</span><span class="mt"><b>${match(p)}%</b>encaje</span>${w.length?`<span class="why ${/debajo|justo/.test(w[0])?'w':''}">${esc(w[0])}</span>`:''}</div>
-    <div class="bd"><div><div class="nm">${esc(p.n)}</div><div class="rl">${esc(p.rt||p.r)}</div><div class="tags2"><span class="ok">✓ ${p.en?'Inglés':'Castellano'}</span><span>${esc(p.sp||'')}</span></div></div>
+    <div class="bd"><div><div class="nm">${esc(p.n)}</div><div class="rl">${esc(p.rt||p.r)}</div><div class="tags2"><span class="ok">✓ ${p.en?'Inglés':'Castellano'}</span><span>${esc(p.sp||'')}</span>${p.refBy?`<span class="ok">Referido por ${esc(p.refBy)}</span>`:''}</div></div>
     <div class="ven">${logoHTML(p.v)}<span>${esc(p.v)}</span></div>
     <div class="fxl">${two.map(([k,v])=>fxLine(k,v)).join('')}</div>
-    <details><summary>Más (idiomas, formación, disponibilidad, edad)</summary><div class="xp">${xpRows(p)}</div></details>
+    ${cuadHTML(p,false)}
+    <details><summary>Más (idiomas, formación, referencia, edad)</summary><div class="xp">${xpRows(p)}</div></details>
     <div class="yn"><button onclick="decide(${p.i},false)">Paso</button><button class="y" onclick="decide(${p.i},true)">Entrevista</button></div></div></div>`}).join('')
     :`<div class="none" style="grid-column:1/-1">No queda nadie para esta búsqueda. Prueba otro puesto.</div>`;
   document.getElementById('moreN').textContent=rest.length.toLocaleString('es-ES');
-  document.getElementById('rows').innerHTML=rest.slice(0,150).map(({p})=>`<div class="rw" onclick="card(${p.i})">${avHTML(p)}<div style="min-width:0"><div class="nm">${esc(p.n)}<span class="tag t-st">${match(p)}%</span>${p.open?`<span class="tag t-open">Busca</span>`:''}${p.src!=='LinkedIn'?`<span class="tag t-own">Tu CV</span>`:''}</div><div class="rl">${esc(p.r)} · ${logoHTML(p.v)} ${esc(p.v)} · ${esc(((p.f||[])[1]||[])[1]||p.s)}</div></div><div class="yn" onclick="event.stopPropagation()"><button onclick="decide(${p.i},false)">Paso</button><button class="y" onclick="decide(${p.i},true)">Entrevista</button></div></div>`).join('')}
-function decide(i,yes){document.querySelector('.modal:not(.plain)')?.remove();(yes?ST.yes:ST.no).push(i);if(yes)ST['t'+i]=Date.now();save();pinta();const el=document.getElementById('tc'+i);if(el){el.classList.add('done');setTimeout(run,250)}else run();if(yes){const c=document.getElementById('cnt3');c.animate([{transform:'translateY(-50%) scale(1.4)'},{transform:'translateY(-50%) scale(1)'}],{duration:350})}}
-function cond(){const k=payM(),band=BAND(ST.role);return {pay:k?fmtE(k)+' brutos al mes':fmtE(band[0])+' brutos al mes',start:ST.start||'en tres semanas',roster:ST.roster||'cinco días'}}
+  document.getElementById('rows').innerHTML=rest.slice(0,150).map(({p})=>`<div class="rw" onclick="card(${p.i})">${avHTML(p)}<div style="min-width:0"><div class="nm">${esc(p.n)}<span class="tag t-st">${match(p)}%</span>${p.open?`<span class="tag t-open">Busca</span>`:''}${p.src==='Referido'?`<span class="tag t-open">Referido</span>`:''}${p.src==='Tu bandeja'?`<span class="tag t-own">Tu CV</span>`:''}</div><div class="rl">${esc(p.r)} · ${logoHTML(p.v)} ${esc(p.v)} · ${esc(((p.f||[])[1]||[])[1]||p.s)}</div></div><div class="yn" onclick="event.stopPropagation()"><button onclick="decide(${p.i},false)">Paso</button><button class="y" onclick="decide(${p.i},true)">Entrevista</button></div></div>`).join('')}
+function decide(i,yes){document.querySelector('.modal:not(.plain)')?.remove();(yes?ST.yes:ST.no).push(i);if(yes){ST['t'+i]=Date.now();const p=byId(i);if(p&&!ST.jobs[roleOf(p)])ST.jobs[roleOf(p)]={t:Date.now(),d0:0,pay:payM(),start:ST.start,roster:ST.roster}}save();pinta();const el=document.getElementById('tc'+i);if(el){el.classList.add('done');setTimeout(run,250)}else run();if(yes){const c=document.getElementById('cnt3');c.animate([{transform:'translateY(-50%) scale(1.4)'},{transform:'translateY(-50%) scale(1)'}],{duration:350})}}
+function cond(){const k=payM(),band=BAND(ST.role);return {pay:k?fmtE(k)+' brutos al mes':fmtE(band[0])+' brutos al mes',start:ST.start||'en tres semanas',roster:ST.roster||'cinco días, dos libres'}}
 function card(i){const p=byId(i),c=cond();const d=document.createElement('div');d.className='modal';d.onclick=e=>{if(e.target===d)d.remove()};
   d.innerHTML=`<div class="in"><div class="bigph">${bigPh(p)}<button class="x" onclick="this.closest('.modal').remove()">✕</button><div class="ov"><h2>${esc(p.n)}</h2><div class="rl">${esc(p.rt||p.r)} · ${esc(p.v)}</div></div></div>
    <div class="body">
@@ -595,25 +705,36 @@ function card(i){const p=byId(i),c=cond();const d=document.createElement('div');
    <button class="vbtn" onclick="playSample()"><span class="vb-i">▶</span><span><b>Vídeo de presentación, 1 minuto</b><s>En la demo, una muestra. Cada candidato graba el suyo.</s></span></button>
    <div class="lb2" style="margin-top:16px">Lo que hemos comprobado</div>
    <div class="xp big">${xpRows(p)}</div>
-   <div class="nx"><s class="lb2">Si dices que sí</s>Le llamamos un minuto y confirmamos, en este orden: disponible ya · acepta ${esc(c.pay)} · le encajan ${esc(c.roster)} · puede empezar ${esc(c.start)} · idiomas. Nos manda su vídeo y agendamos la entrevista con la oferta firmada.</div>
+   ${cuadHTML(p,ST.yes.includes(i)&&stageOf(p)>=3)}
+   <div class="nx"><s class="lb2">Si dices que sí</s>Le llamamos un minuto y confirmamos, en este orden: disponible ya · acepta ${esc(c.pay)} · le encaja ${esc(c.roster)} · puede empezar ${esc(c.start)} · idiomas. Llamamos a su último jefe. Nos manda su vídeo y agendamos la entrevista con la oferta firmada.</div>
    <div class="yn"><button onclick="decide(${i},false)">Paso</button><button class="y" onclick="decide(${i},true)">Entrevista</button></div></div></div>`;document.body.appendChild(d)}
 function playSample(){const d=document.createElement('div');d.className='modal plain vmodal';d.onclick=e=>{if(e.target===d)d.remove()};d.innerHTML=`<div class="in"><h2>Vídeo de presentación</h2><p>Clip de muestra. En tu versión instalada cada candidato graba un selfie de un minuto presentándose antes de que lo veas.</p><video src="intro.mp4" poster="intro_poster.jpg" controls autoplay playsinline></video><div class="acts"><button class="btn" onclick="this.closest('.modal').remove()">Cerrar</button></div></div>`;document.body.appendChild(d)}
-const K=['Llamada 1 min','Cualificado','Acepta condiciones','Vídeo recibido','Entrevista firmada'];
+const K=['Llamada 1 min','Su último jefe','Acepta sueldo y cuadrante','Vídeo recibido','Entrevista firmada'];const KOFF=[0,4,9,25,70];
+const hhmm=ms=>{const d=new Date(ms);return d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0')};
+function addReferral(p){if(ST['r'+p.i])return;const cand=POOL.find(x=>x.a===p.a&&x.i!==p.i&&!ST.yes.includes(x.i)&&!ST.no.includes(x.i)&&x.ph&&!OWN.some(o=>o.l===x.l));if(!cand)return;const ref=Object.assign({},cand,{i:2000+OWN.length,src:'Referido',refBy:p.n.split(' ')[0]+' '+(p.n.split(' ')[1]||'')[0]+'.',open:true});OWN.push(ref);ST['r'+p.i]=ref.n;save()}
 function contacting(){const list=ST.yes.map(byId).filter(Boolean);const c=cond();
-  document.getElementById('clist').innerHTML=list.length?list.map(p=>{const age=(Date.now()-(ST['t'+p.i]||0))/1000;const stage=age<6?1:age<12?2:age<18?3:age<23?4:5;const first=p.n.split(' ')[0];const openD=ST['o'+p.i];
+  document.getElementById('clist').innerHTML=list.length?list.map(p=>{const stage=stageOf(p);const first=p.n.split(' ')[0];const openD=ST['o'+p.i];const t0=ST['t'+p.i]||Date.now();if(stage>=3)addReferral(p);
     const dot=stage===1?'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.6a2 2 0 01-.5 2.1L8 9.7a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.8.3 1.7.5 2.6.7a2 2 0 011.7 2z"/></svg>':'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
-    const S=[`Llamando ahora a ${first}. Un minuto.`,`Disponible y con la experiencia confirmada. Repasando tus condiciones…`,`Acepta ${c.pay}, ${c.roster}, inicio ${c.start}. Idiomas comprobados. Pidiéndole el vídeo…`,`Vídeo recibido. Agendando la entrevista y mandando la oferta para firmar…`,`Entrevista agendada. Jueves 16:30 en tu local. Oferta y fecha de inicio firmadas.`];
-    const tr=[['AltaSala',`Hola ${first}, soy de AltaSala, trabajamos con ${venueName()}. Buscan ${ST.role.toLowerCase()}. ¿Tienes un minuto?`],[first,'Sí, dime.'],['AltaSala',`¿Estás disponible para empezar ${c.start}? El sueldo es ${c.pay}, ${c.roster}.`],[first,'Sí, me encaja.'],['AltaSala','Perfecto. Una rápida: cuéntame el servicio más fuerte que has llevado este año.'],[first,'Un sábado, 180 cubiertos, dos rangos caídos. Movimos el pase y sacamos a todo el mundo a las once.'],['AltaSala','Te mando un enlace para que grabes un vídeo de un minuto presentándote, y te agendo el jueves a las 16:30. La oferta te llega ahora para firmar antes de venir.']].slice(0,stage>=4?7:stage===3?5:stage===2?3:1);
-    return `<div class="ci ${stage===5?'booked':''}"><div class="avw">${avHTML(p)}<span class="dot ${stage===1?'ring':''}">${dot}</span></div><div><div class="nm">${esc(p.n)}</div><div class="rl">${esc(p.r)} · ${esc(p.v)}</div><div class="steps">${K.map((k,j)=>`${j?'<i></i>':''}<span class="${j+1<stage?'on':j+1===stage?'now':''}">${k}</span>`).join('')}</div></div>
+    const S=[`Llamando ahora a ${first}. Un minuto.`,`Disponible. Llamando a su último jefe en ${p.v}…`,`Su jefe: "lo volvería a contratar". Acepta ${c.pay}, ${c.roster}, inicio ${c.start}. Idiomas comprobados. Pidiéndole el vídeo…`,`Vídeo recibido. Agendando la entrevista y mandando la oferta para firmar…`,`Entrevista agendada. Jueves 16:30 en ${venueName()}. Oferta firmada por los dos.`];
+    const detail=[`Hola ${first}, soy de AltaSala, trabajamos con ${venueName()}. Buscan ${ST.role.toLowerCase()}. ¿Tienes un minuto?`,`Hemos hablado con su responsable en ${p.v}. Referencia: "lo volvería a contratar, puntual y no se le cae un servicio".`,`Acepta ${c.pay}, ${c.roster}, inicio ${c.start}. Inglés comprobado hablando.`,`Vídeo de 1:00 recibido y revisado.`,`Oferta con sueldo, cuadrante y fecha firmada por ${first} y por ${venueName()}.`];
+    const tr=[['AltaSala',`Hola ${first}, soy de AltaSala, trabajamos con ${venueName()}. Buscan ${ST.role.toLowerCase()}. ¿Tienes un minuto?`],[first,'Sí, dime.'],['AltaSala',`¿Estás disponible para empezar ${c.start}? El sueldo es ${c.pay}, el cuadrante ${c.roster}.`],[first,'Sí, me encaja.'],['AltaSala','Una rápida: cuéntame el servicio más fuerte que has llevado este año.'],[first,'Un sábado, 180 cubiertos, dos rangos caídos. Movimos el pase y sacamos a todo el mundo a las once.'],['AltaSala','¿Quién es el mejor compañero con el que has trabajado y que estaría abierto a moverse?'],[first,ST['r'+p.i]?`${ST['r'+p.i]}. Te paso su contacto.`:'Te paso un nombre por WhatsApp.'],['AltaSala','Te mando un enlace para grabar un vídeo de un minuto presentándote, y te agendo el jueves a las 16:30. La oferta te llega ahora para firmar antes de venir.']].slice(0,stage>=4?9:stage===3?8:stage===2?3:1);
+    return `<div class="ci ${stage===5?'booked':''}"><div class="avw">${avHTML(p)}<span class="dot ${stage===1?'ring':''}">${dot}</span></div><div><div class="nm">${esc(p.n)}</div><div class="rl">${esc(p.r)} · ${esc(p.v)}</div></div>
+    <div class="tlm">${K.map((k,j)=>`<div class="${j+1<stage?'on':j+1===stage?'now':''}"><s>${j+1<=stage?hhmm(t0+KOFF[j]*60000):'—:—'}</s><b>${k}</b>${j+1<=stage?`<span>${esc(detail[j])}</span>`:''}</div>`).join('')}</div>
+    ${stage>=3?cuadHTML(p,true).replace('class="cuad"','class="cuad" style="grid-column:1/-1"'):''}
+    ${stage>=3&&ST['r'+p.i]?`<div class="refq">${avHTML(OWN.find(o=>o.n===ST['r'+p.i])||p)}<div><b>Nos ha dado un referido: ${esc(ST['r'+p.i])}</b><s>Ya está en tu pool con la etiqueta "Referido". Así se construye tu listado del jefe de sala.</s></div><span class="tag t-open">Referido</span></div>`:''}
     ${stage>=4?`<div class="vrow"><span class="vb-i" onclick="playSample()">▶</span><div><b>Vídeo de presentación recibido · 1:00</b><s>Toca para verlo. En la demo, una muestra.</s></div></div>`:''}
-    ${stage===5?`<div class="bk"><div class="bkring"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-16"/></svg></div><div><b>Entrevista agendada · jueves 16:30</b><s>Oferta y fecha de inicio firmadas por las dos partes. Si no se presenta, el siguiente va gratis.</s></div></div>`:''}
+    ${stage===5?`<div class="bk"><div class="bkring"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-16"/></svg></div><div><b>Entrevista agendada · jueves 16:30</b><s>Oferta con sueldo, cuadrante y fecha firmada por las dos partes. Si te planta, el siguiente va gratis.</s></div></div>
+    <div class="wa"><span class="ic"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 12 12 0 004.6 4c.6.3 1.1.4 1.5.5a3.6 3.6 0 001.6.1 2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.1-1.3c0-.1-.2-.2-.5-.3z"/></svg></span><div class="bub"><b>AltaSala → ${esc(venueName())} · ${hhmm(t0+KOFF[4]*60000)}</b>${esc(first)} ha dicho sí a ${esc(c.pay)} y puede empezar ${esc(c.start)}. Ha firmado. ¿Entrevista jueves 16:30 en tu local?<div class="bb"><span class="y">Sí, jueves 16:30</span><span>Otra hora</span></div></div></div>`:''}
     <div class="act"><span class="small">${esc(S[stage-1])}</span><button class="btn" onclick="ST['o${p.i}']=!ST['o${p.i}'];save();contacting()">${openD?'Ocultar':'Ver la llamada'}</button><button class="btn" onclick="withdraw(${p.i})">Retirar</button></div>
-    ${openD?`<div class="conv"><div class="lb2">Transcripción de la llamada · demo, simulada</div>${tr.map(([w,l])=>`<div class="tl ${w==='AltaSala'?'us':''}"><s>${esc(w)}</s><span>${esc(l)}</span></div>`).join('')}${stage>=5?`<div class="lb2" style="margin-top:12px">Mensaje de confirmación</div><div class="tl us msg"><s>AltaSala → ${esc(first)}</s><span>Hola ${esc(first)}, confirmado: entrevista jueves 16:30 en ${esc(venueName())}. Te adjunto la oferta con sueldo, días y fecha de inicio. Fírmala antes de venir.</span></div><div class="tl"><s>${esc(first)}</s><span>Firmado. Nos vemos el jueves.</span></div>`:''}</div>`:''}
+    ${openD?`<div class="conv"><div class="lb2">Transcripción de la llamada · demo, simulada</div>${tr.map(([w,l])=>`<div class="tl ${w==='AltaSala'?'us':''}"><s>${esc(w)}</s><span>${esc(l)}</span></div>`).join('')}</div>`:''}
     </div>`}).join(''):`<div class="none">Nadie todavía. Ve a tus tres y toca Entrevista en alguien.</div>`;
-  clearTimeout(window._ct);if(list.length&&document.getElementById('pane2').classList.contains('on'))window._ct=setTimeout(contacting,2000)}
+  const wa='https://wa.me/?text='+encodeURIComponent(`Hola, en ${venueName()} buscamos ${ST.role.toLowerCase()}. ¿Conoces a alguien bueno que esté abierto a moverse? Respóndeme con su nombre y teléfono y le llamamos nosotros.`);
+  document.getElementById('refw').innerHTML=`<div><b>Pide un referido a tu equipo</b><s>Un mensaje a tu gente de sala y cocina. Lo que llegue entra al mismo filtro, con la etiqueta "Referido".</s></div><a class="btn" target="_blank" rel="noopener" href="${wa}">Mandar por WhatsApp</a>`;
+  clearTimeout(window._ct);if(list.length&&document.getElementById('pane3').classList.contains('on'))window._ct=setTimeout(contacting,2000)}
 function withdraw(i){ST.yes=ST.yes.filter(x=>x!==i);save();pinta();contacting()}
+function sign(w){const el=document.getElementById('sig'+w);el.textContent=w==='A'?(ST.venue||'Tu local'):'El candidato';el.classList.add('done')}
 function setup(){const d=document.createElement('div');d.className='modal plain';d.onclick=e=>{if(e.target===d)d.remove()};
-  d.innerHTML=`<div class="in"><h2>Configurar para un local</h2><p>El nombre entra en la cabecera y en cada llamada que hacemos.</p><label for="vn">Nombre del local o grupo</label><input type="text" id="vn" value="${esc(ST.venue)}" placeholder="Grupo Tragaluz"><div class="acts"><button class="btn pri" onclick="ST.venue=document.getElementById('vn').value.trim();save();pinta();this.closest('.modal').remove()">Guardar</button><button class="btn" onclick="this.closest('.modal').remove()">Cancelar</button></div></div>`;document.body.appendChild(d);setTimeout(()=>document.getElementById('vn').focus(),0)}
+  d.innerHTML=`<div class="in"><h2>Tu local</h2><p>El nombre entra en el panel, en la cabecera y en cada llamada que hacemos.</p><label for="vn">Nombre del local o grupo</label><input type="text" id="vn" value="${esc(ST.venue)}" placeholder="Grupo Tragaluz"><div class="acts"><button class="btn pri" onclick="ST.venue=document.getElementById('vn').value.trim();save();pinta();panel();this.closest('.modal').remove()">Guardar</button><button class="btn" onclick="this.closest('.modal').remove()">Cancelar</button></div></div>`;document.body.appendChild(d);setTimeout(()=>document.getElementById('vn').focus(),0)}
 ['Pay','Start','Roster'].forEach(k=>document.getElementById('c'+k).addEventListener('input',e=>{ST[k.toLowerCase()]=e.target.value;save();salhint();run()}));
 document.getElementById('q').addEventListener('input',run);
 
@@ -653,8 +774,8 @@ async function triage(files){const list=[...files].slice(0,50);if(!list.length)r
 function paintTri(){const c={pass:0,review:0,discard:0};TRI.forEach(j=>c[j.verdict]++);const L={pass:'Pasa',review:'Revisar',discard:'Descartar'};document.getElementById('tsum').innerHTML=`<span class="v-pass">Pasan <b>${c.pass}</b></span><span class="v-review">Revisar <b>${c.review}</b></span><span class="v-discard">Descartar <b>${c.discard}</b></span><span>Total <b>${TRI.length}</b></span>`;const order={pass:0,review:1,discard:2};
   document.getElementById('tbody').innerHTML=TRI.map((j,k)=>({j,k})).sort((a,b)=>order[a.j.verdict]-order[b.j.verdict]).map(({j,k})=>`<tr onclick="triRow(${k})"><td><b>${esc(j.name)}</b><div class="small">${esc(j.file)}</div></td><td>${esc(j.role)}</td><td>${j.longest?j.longest+' meses':'sin fechas'}</td><td>${j.goods.length?esc(j.goods.slice(0,2).join(', ')):'—'}</td><td><span class="tag v-${j.verdict}">${L[j.verdict]}</span></td></tr>`).join('');document.getElementById('tacts').hidden=!c.pass}
 function triRow(k){const j=TRI[k];const L={pass:'Pasa',review:'Revisar',discard:'Descartar'};const d=document.createElement('div');d.className='modal plain';d.onclick=e=>{if(e.target===d)d.remove()};d.innerHTML=`<div class="in"><h2>${esc(j.name)}</h2><p>${esc(j.role)} · <span class="tag v-${j.verdict}">${L[j.verdict]}</span></p><div class="reasons">${j.reasons.map(([k2,r])=>`<div class="${k2}">${esc(r)}</div>`).join('')}</div><div class="acts"><button class="btn" onclick="this.closest('.modal').remove()">Cerrar</button></div></div>`;document.body.appendChild(d)}
-function addPassed(){const b=1000+OWN.length;TRI.filter(j=>j.verdict==='pass').forEach((j,k)=>{if(OWN.some(o=>o.n===j.name))return;const role=j.role.replace(/\b\w/g,c=>c.toUpperCase());OWN.push({i:b+k,n:j.name,r:role,rt:role,v:j.venue,m:j.longest,mc:j.longest,s:CITY,c:CITY,a:j.area,lv:j.level,l:'',email:j.email,src:'Tu bandeja',f:[['exp',`${j.longest} meses como ${j.role} en ${j.venue}`],...(j.train.length?[['train',j.train.join(', ')]]:[]),['proof','De tu bandeja de currículums, pasa el filtro']],langs:[],yrs:j.age?Math.max(0,+j.age-21):null,open:true,top:!!j.goods.length})});pinta();tab(1)}
+function addPassed(){const b=1000+OWN.length;TRI.filter(j=>j.verdict==='pass').forEach((j,k)=>{if(OWN.some(o=>o.n===j.name))return;const role=j.role.replace(/\b\w/g,c=>c.toUpperCase());OWN.push({i:b+k,n:j.name,r:role,rt:role,v:j.venue,m:j.longest,mc:j.longest,s:CITY,c:CITY,a:j.area,lv:j.level,l:'',email:j.email,src:'Tu bandeja',f:[['exp',`${j.longest} meses como ${j.role} en ${j.venue}`],...(j.train.length?[['train',j.train.join(', ')]]:[]),['proof','De tu bandeja de currículums, pasa el filtro']],langs:[],yrs:j.age?Math.max(0,+j.age-21):null,open:true,top:!!j.goods.length})});pinta();tab(2)}
 const dz=document.getElementById('drop');['dragenter','dragover'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.add('over')}));['dragleave','drop'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.remove('over')}));dz.addEventListener('drop',e=>triage(e.dataTransfer.files));
-document.querySelectorAll('.city').forEach(e=>e.textContent=CITY);rotate();heroCard();venues();stages();pinta();run();if(Q.get('puesto')&&Q.get('demo')){setTimeout(()=>{document.getElementById('demo').scrollIntoView({behavior:'smooth'})},600)}
+document.querySelectorAll('.city').forEach(e=>e.textContent=CITY);rotate();heroCard();venues();stages();pinta();live();if(Q.get('puestos')){Q.get('puestos').split(',').forEach(x=>{const [r,d]=x.split(':');if(r&&!ST.jobs[r])ST.jobs[r]={t:Date.now(),d0:parseInt(d)||0,pay:payM(),start:ST.start,roster:ST.roster}});save()}panel();run();if(Q.get('demo')){setTimeout(()=>{document.getElementById('demo').scrollIntoView({behavior:'smooth'})},600)}
 </script>
 </body></html>
