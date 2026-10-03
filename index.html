@@ -52,10 +52,10 @@ select.lang{border:1px solid var(--line2);background:#fff;border-radius:8px;padd
 .shot::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.6) 72%)}
 .cc{position:absolute;left:18px;right:18px;bottom:18px;background:#fff;border-radius:14px;padding:14px;display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center;z-index:2;box-shadow:0 20px 40px -20px rgba(0,0,0,.4);animation:rise .8s .3s both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.cc .nm{font-weight:600;font-size:16px}.cc .rl{color:var(--fg2);font-size:13.5px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc .nm{font-weight:600;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cc .rl{color:var(--fg2);font-size:13.5px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cc>div{min-width:0}
 .cc .st{display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right}
-.cc .st b{font-size:12px;color:var(--ok);font-weight:600;letter-spacing:.04em;text-transform:uppercase}.cc .st s{text-decoration:none;font-size:12px;color:var(--fg3)}
+.cc .st b{font-size:11px;white-space:nowrap;color:var(--ok);font-weight:600;letter-spacing:.04em;text-transform:uppercase}.cc .st s{text-decoration:none;font-size:12px;color:var(--fg3)}
 .badge{position:absolute;top:18px;left:18px;z-index:2;background:rgba(255,255,255,.92);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:500;display:flex;gap:8px;align-items:center}
 .badge i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(31,122,76,.5);animation:ping 2s infinite}
 @keyframes ping{to{box-shadow:0 0 0 10px rgba(31,122,76,0)}}
