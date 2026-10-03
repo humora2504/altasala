@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="description" content="AltaSala. Hiring software for restaurants and hotels in Melbourne. Three vetted people per role, we contact them for you."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23101010'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='38' fill='%23fff'%3EA%3C/text%3E%3C/svg%3E"></head><body style="margin:0"><title>AltaSala</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
 <style>
@@ -36,13 +36,13 @@ select.lang{border:1px solid var(--line2);background:#fff;border-radius:8px;padd
 
 /* hero */
 .hero{padding-block:clamp(40px,6vw,80px) clamp(40px,6vw,72px)}
-.hero .g{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero .g{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:start}
+.hero h1{min-height:3.15em}
 @media(max-width:900px){.hero .g{grid-template-columns:1fr}}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--fg2);margin-bottom:22px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 8px}
 .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
 .eyebrow b{color:var(--fg);font-weight:500}
-.rot{display:inline-block;border-bottom:3px solid var(--ink);padding-bottom:2px;min-width:1ch;white-space:nowrap}
-.rot::after{content:'';display:inline-block;width:3px;height:.85em;background:var(--ink);margin-left:3px;vertical-align:-.08em;animation:blink 1s steps(2) infinite}
+.rot{white-space:nowrap;font-style:italic}
 @keyframes blink{to{opacity:0}}
 .hero .lede{margin-top:20px}
 .hero .cta{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
