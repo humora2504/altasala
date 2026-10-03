@@ -344,8 +344,9 @@ footer .wrap{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
 
 <header class="hero wrap" id="top">
   <div class="strip"><i></i><span id="stripFor" hidden>Instalado en <b id="stripVenue"></b> ·</span><span id="stripGen">Software instalado en tu restaurante ·</span><span>lee y comprueba cada currículum ·</span><span>llama por ti ·</span><span>entrevista en <b>48 h</b></span></div>
-  <h1>150 currículums de <span class="rot"><span id="rot">camarero</span>.</span><span class="l2">Tres en tu mesa. Ya llamados.</span></h1>
+  <h1>150 currículums de <span class="rot"><span id="rot">camarero</span>.</span><span class="l2">Tres en tu mesa, ya llamados.</span></h1>
   <p class="sub">Conéctanos tu bandeja. Leemos cada currículum, comprobamos lo que dice con datos públicos, llamamos a los que encajan y te sentamos a tres con todo firmado.</p>
+  <style>.hero h1{font-size:clamp(38px,6vw,84px)}.hero h1.cl .rot{white-space:normal}</style>
 
   <div class="app" id="app">
     <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg><b id="subd">tulocal</b>.altasala.com</span><span class="who" id="who"><span class="on">Dirección</span><span>RRHH</span><span>Jefes de sala</span><span>Jefes de cocina</span></span></div>
@@ -822,7 +823,7 @@ function auto(){loadDemo();if(ST.pay&&ST.role){go(true);AUTO=false;return}cur.cl
   document.getElementById('app').addEventListener('pointerdown',stopAuto,{once:true})}
 
 /* ===== hero: rotación ===== */
-const RW0=['camarero','cocinero','jefe de partida','jefe de sala','segundo de cocina','barra','sumiller'];const RW=(CL&&CL.locales&&CL.locales.length)?RW0.map((w,i)=>w+' para '+CL.locales[i%CL.locales.length].n):RW0;let ri=0;
+const RW0=['camarero','cocinero','jefe de partida','jefe de sala','segundo de cocina','barra','sumiller'];const SHORTL=CL&&CL.locales?CL.locales.filter(l=>l.n.length<=12):[];const RW=(SHORTL.length)?RW0.map((w,i)=>w+' para '+SHORTL[i%SHORTL.length].n):RW0;let ri=0;
 function rotate(){const el=document.getElementById('rot');const w=RW[ri=(ri+1)%RW.length];let i=el.textContent.length;const del=()=>{if(i>0){el.textContent=el.textContent.slice(0,--i);setTimeout(del,28)}else{let j=0;const typ=()=>{if(j<w.length){el.textContent=w.slice(0,++j);setTimeout(typ,50)}else setTimeout(rotate,2200)};typ()}};del()}
 
 /* ===== prueba / contadores ===== */
@@ -860,7 +861,7 @@ function client(){const venue=ST.venue;const sd=venue?slug(venue.replace(/^grupo
   if(CL.locales&&CL.locales.length){const L=document.getElementById('locs');L.hidden=false;L.innerHTML=CL.locales.map(l=>`<button aria-pressed="${ST.local===l.n}" onclick="pickLocal('${esc(l.n)}')">${esc(l.n)}<small>${esc(l.city)}</small></button>`).join('')}
   if(CL.vacantes&&CL.vacantes.length){const V=document.getElementById('vac');V.hidden=false;const VS=CL.vacantes.map((v,i)=>({v,i})).sort((a,b)=>(b.v.city===CITY)-(a.v.city===CITY));V.innerHTML=`<span class="k"><i></i>Vuestras ofertas publicadas · ${CL.vacantes.length}</span>`+VS.slice(0,6).map(({v,i})=>`<div class="v"><div><b>${esc(v.puesto)}</b><s>${[v.local,v.city,v.fecha].filter(Boolean).map(esc).join(' · ')}</s></div><button onclick="openVac(${i})">Conectar bandeja</button></div>`).join('')+`<div class="src">Fuente: ${CL.vacantes.map(v=>v.src).filter((x,i,a)=>a.indexOf(x)===i).join(', ')} · consultado ${esc(CL.consultado||'')}. Al conectar, leemos y comprobamos lo que llega y llamamos nosotros.</div>`}
   if(CL.locales&&CL.locales.some(l=>l.logo)){const lg=CL.locales.filter(l=>l.logo);document.getElementById('marq').innerHTML=lg.concat(lg).map(l=>`<img src="${l.logo}" alt="${esc(l.n)}" title="${esc(l.n)}">`).join('');document.getElementById('proofK').textContent=`Vuestros ${CL.locales.length} locales en ${CL.cities.join(' y ')} · ya los conocemos`}
-  if(ST.role&&ST.role!=='Otra cosa')document.getElementById('rot').textContent=ST.role.toLowerCase()+(CL.locales&&CL.locales.length?' para '+CL.locales[0].n:'')}
+  if(ST.role&&ST.role!=='Otra cosa'){const sl=(CL.locales||[]).filter(l=>l.n.length<=12);document.getElementById('rot').textContent=ST.role.toLowerCase()+(sl.length?' para '+sl[0].n:'')}}
 function pickLocal(n){stopAuto();const l=(CL.locales||[]).find(x=>x.n===n);ST.local=n;save();if(l&&l.city&&l.city!==CITY){const q=new URLSearchParams(location.search);q.set('ciudad',l.city);q.set('cliente',Q.get('cliente'));location.search=q.toString();return}client();roles()}
 function openVac(i){stopAuto();const v=CL.vacantes[i];if(v.city&&v.city!==CITY){const q=new URLSearchParams(location.search);q.set('ciudad',v.city);q.set('puesto',v.rol||'Camarero');q.set('reset','1');location.search=q.toString();return}ST.role=v.rol||'Camarero';save();client();roles();go(true);document.getElementById('cards').scrollIntoView({behavior:'smooth',block:'center'})}
 
