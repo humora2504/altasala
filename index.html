@@ -150,15 +150,30 @@ select.lang{border:1px solid var(--line2);background:#fff;border-radius:8px;padd
 .pane{display:none;padding:28px}.pane.on{display:block}
 .pane h3{font-size:28px}.pane .sub{color:var(--fg2);margin-top:6px;font-size:15px}
 .roles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+#venueBtn{border:0!important;background:none!important;box-shadow:none;outline:none;color:var(--fg2);text-decoration:underline;font-size:14px;padding:0 6px}
 @media(max-width:860px){.roles{grid-template-columns:repeat(2,1fr)}}
-.rb{border:1px solid var(--line);background:#fff;border-radius:16px;padding:20px 14px;cursor:pointer;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;font-size:15px;font-weight:500;transition:all .15s}
-.rb svg{width:32px;height:32px}.rb:hover{border-color:var(--fg3);transform:translateY(-1px)}
+.rb{border:1px solid var(--line);background:#fff;border-radius:18px;padding:18px 18px 16px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:4px;align-items:stretch;transition:all .18s;min-height:190px;position:relative;font:inherit;color:inherit}
+.rb .rbt{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.rb .rbt>svg{width:30px;height:30px;color:var(--fg2)}
+.rb .chk{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--line2);display:grid;place-items:center;color:transparent;transition:all .18s}.rb .chk svg{width:14px;height:14px}
+.rb b{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.05;letter-spacing:-.01em}
+.rb small{font-size:13px;color:var(--fg3)}
+.rb .rbf{margin-top:auto;padding-top:14px;display:flex;align-items:center;gap:10px}
+.rb .faces{display:flex}.rb .faces .av{width:28px;height:28px;font-size:10px;border:2px solid #fff;margin-left:-8px}.rb .faces .av:first-child{margin-left:0}
+.rb .cnt2{font-size:12.5px;color:var(--fg2);line-height:1.2}
+.rb:hover{border-color:var(--fg3);transform:translateY(-2px);box-shadow:0 18px 40px -30px rgba(0,0,0,.35)}
 .rb[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
-.rb small{font-size:12.5px;font-weight:400;color:var(--fg3)}.rb[aria-pressed="true"] small{color:#c9c6bd}
-.cond{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.rb[aria-pressed="true"] .rbt>svg{color:#fff}.rb[aria-pressed="true"] .chk{background:var(--ok);border-color:var(--ok);color:#fff}
+.rb[aria-pressed="true"] small,.rb[aria-pressed="true"] .cnt2{color:#c9c6bd}.rb[aria-pressed="true"] .faces .av{border-color:var(--ink)}
+.condw{margin-top:22px;background:var(--sunk);border-radius:18px;padding:18px 18px 16px}
+.condw .ch{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;flex-wrap:wrap}.condw .ch b{font-family:var(--serif);font-weight:400;font-size:20px}.condw .ch span{font-size:13.5px;color:var(--fg2)}
+.cond{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media(max-width:700px){.cond{grid-template-columns:1fr}}
-.cond label{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3);font-weight:500;margin-bottom:6px}
-.cond input{width:100%;border:1px solid var(--line2);border-radius:10px;padding:11px 13px;font-size:15px}
+.cond>div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px 8px;display:grid;grid-template-columns:22px 1fr;gap:2px 10px;align-items:center}
+.cond>div:focus-within{border-color:var(--ink)}
+.cond svg{width:20px;height:20px;grid-row:1/3;color:var(--fg2)}
+.cond label{display:block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3);font-weight:600}
+.cond input{width:100%;border:0;padding:2px 0 4px;font-size:15.5px;background:transparent}.cond input:focus{outline:none}
 .pane .go{margin-top:22px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .pane .go .small{color:var(--fg3)}
 .top3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
@@ -328,12 +343,13 @@ footer .in{display:flex;flex-wrap:wrap;gap:18px 36px;justify-content:space-betwe
     <div class="pane on" id="pane0">
       <h3 data-i18n="d.what">Who do you need?</h3><p class="sub" data-i18n="d.whats">Tap one. We take it from there.</p>
       <div class="roles" id="roles"></div>
+      <div class="condw"><div class="ch"><b data-i18n="c.h">Your conditions</b><span data-i18n="c.hs">Every candidate hears these before you do anything.</span></div>
       <div class="cond">
-        <div><label data-i18n="c.pay">Pay</label><input type="text" id="cPay" data-i18n-ph="c.payph" placeholder="e.g. $75k + super"></div>
-        <div><label data-i18n="c.start">Start</label><input type="text" id="cStart" data-i18n-ph="c.startph" placeholder="e.g. within 3 weeks"></div>
-        <div><label data-i18n="c.roster">Roster</label><input type="text" id="cRoster" data-i18n-ph="c.rosterph" placeholder="e.g. 5 days, two nights off"></div>
-      </div>
-      <div class="go"><button class="btn pri lg" onclick="goShort()" data-i18n="d.go">Show me my three</button><span class="small" data-i18n="d.gos">Every candidate hears these conditions before you do anything.</span><button class="btn" id="venueBtn" onclick="setup()" style="margin-left:auto"></button></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3v18M16.5 7.5c0-1.7-2-3-4.5-3s-4.5 1.3-4.5 3 2 3 4.5 3 4.5 1.3 4.5 3-2 3-4.5 3-4.5-1.3-4.5-3"/></svg><label data-i18n="c.pay">Pay</label><input type="text" id="cPay" data-i18n-ph="c.payph" placeholder="e.g. $75k + super"></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><label data-i18n="c.start">Start date</label><input type="text" id="cStart" data-i18n-ph="c.startph" placeholder="e.g. within 3 weeks"></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><label data-i18n="c.roster">Days and shifts</label><input type="text" id="cRoster" data-i18n-ph="c.rosterph" placeholder="e.g. 5 days, Mon and Tue off"></div>
+      </div></div>
+      <div class="go"><button class="btn pri lg" onclick="goShort()" data-i18n="d.go">Show me my three</button><span class="small" data-i18n="d.gos">Three people, with what we confirmed. Then you say yes or no.</span><button class="more" id="venueBtn" onclick="setup()" style="margin-left:auto"></button></div>
     </div>
     <div class="pane" id="pane1">
       <h3 id="t3h"></h3><p class="sub" id="t3s"></p>
@@ -447,7 +463,7 @@ es:{'nav.how':'Qué consigues','nav.demo':'Demo en vivo','nav.triage':'Triaje de
  'pr.h2':'Un plan. Contrataciones ilimitadas.','pr.a':'Tu local','pr.a.v':'Mensual, fijo','pr.a.p':'Puestos ilimitados, contrataciones ilimitadas. Instalado con tu nombre y tus condiciones. Cancela cualquier mes.','pr.b':'Grupos y hoteles','pr.b.v':'Por local','pr.b.p':'Una instancia por local, una vista para el grupo. Triaje de CV para cada candidatura.','pr.c':'Para reclutadores','pr.c.v':'Marca blanca','pr.c.p':'Úsalo con tu nombre. Un archivo para instalar por cliente.',
  'foot.src':'Perfiles: datos profesionales públicos, Melbourne, octubre de 2026. Los CV que sueltas nunca salen de tu navegador.','foot.priv':'Los datos de candidatos para un cliente caen bajo la Australian Privacy Act 1988.','src.LinkedIn':'LinkedIn','src.Your database':'Tus CV',
  'rots':'jefe de cocina|sumiller|jefe de sala|bartender|sous chef|jefe de partida|camarero|barista'}};
-Object.assign(I18N.en,{'how.h2':'What you get','o1.h':'Three people, not 300','o1.p':'Name the role. Within 48 hours you have three people with photo, venue and what we confirmed about them: experience, how long they stay, training, and that they will not leave you in a month.',
+Object.assign(I18N.en,{'rb.n':'in the pool','rb.open':'open to move','c.h':'Your conditions','c.hs':'Every candidate hears these before you do anything.','d.gos':'Three people, with what we confirmed. Then you say yes or no.','how.h2':'What you get','o1.h':'Three people, not 300','o1.p':'Name the role. Within 48 hours you have three people with photo, venue and what we confirmed about them: experience, how long they stay, training, and that they will not leave you in a month.',
  'o3.h':'We contact them for you','o3.p':'The ones who pass the CV filter get a message and a one-minute call. We confirm they are available now and that they accept your pay, days and start date. Then we book the interview.',
  'fun1':'in the pool','fun2':'pass the CV filter','fun3':'after the call','ph.msg':'Hi {first}, we work with {venue}. They need a {role}. Would you be up for a one-minute call? Are you available to start now?','ph.rep':'Yes, available. Call me.','ph.inc':'Incoming call','ph.dur':'1 minute','ph.ok1':'Available now','ph.ok2':'Accepts {pay}','ph.ok3':'Interview Thursday 4:30pm',
  'fx.exp':'Experience','fx.stay':'Commitment','fx.train':'Training','fx.proof':'Proven','fx.open':'Availability','fx.openv':'Says they are open to a move',
@@ -455,7 +471,7 @@ Object.assign(I18N.en,{'how.h2':'What you get','o1.h':'Three people, not 300','o
  'd.top3s':'Best fit for {role} in Melbourne right now. Tap a photo for the full card, or decide here.','m.now':'Current role','m.next':'Next step if you say yes','m.nextp':'We call them for one minute and confirm, in this order: available now · accepts {pay} · ok with {roster} · can start {start}. Only then do we book the interview.',
  'k1':'Message sent','k2':'1-minute call','k3':'Available now','k4':'Accepts conditions','k5':'Interview booked','k.p':'Everyone you said yes to, live. Message, one-minute call, your conditions confirmed, interview booked. You do nothing until the last step.',
  'k.s1':'Message sent. Waiting for a reply…','k.s2':'On the phone now. One minute.','k.s3':'Available now. Confirming your conditions…','k.s4':'Accepts {pay}, {roster}, start {start}. Booking the interview…','k.s5':'Interview booked. Thursday 4:30pm at your venue.'});
-Object.assign(I18N.es,{'how.h2':'Qué consigues','o1.h':'Tres personas, no 300','o1.p':'Nombras el puesto. En 48 horas tienes tres personas con foto, casa y lo que hemos confirmado de ellas: experiencia, cuánto duran, formación, y que no te dejan al mes.',
+Object.assign(I18N.es,{'rb.n':'en el pool','rb.open':'abiertos a cambiar','c.h':'Tus condiciones','c.hs':'Cada candidato las escucha antes de que tú hagas nada.','d.gos':'Tres personas, con lo que hemos confirmado. Luego dices sí o no.','how.h2':'Qué consigues','o1.h':'Tres personas, no 300','o1.p':'Nombras el puesto. En 48 horas tienes tres personas con foto, casa y lo que hemos confirmado de ellas: experiencia, cuánto duran, formación, y que no te dejan al mes.',
  'o3.h':'Los contactamos por ti','o3.p':'Los que pasan el filtro del CV reciben un mensaje y una llamada de un minuto. Confirmamos que están disponibles ya y que aceptan tu sueldo, tus días y tu fecha. Luego agendamos la entrevista.',
  'fun1':'en el pool','fun2':'pasan el filtro del CV','fun3':'tras la llamada','ph.msg':'Hola {first}, trabajamos con {venue}. Buscan {role}. ¿Te viene bien una llamada de un minuto? ¿Estás disponible para empezar ya?','ph.rep':'Sí, disponible. Llámame.','ph.inc':'Llamada entrante','ph.dur':'1 minuto','ph.ok1':'Disponible ya','ph.ok2':'Acepta {pay}','ph.ok3':'Entrevista jueves 16:30',
  'fx.exp':'Experiencia','fx.stay':'Compromiso','fx.train':'Formación','fx.proof':'Demostrado','fx.open':'Disponibilidad','fx.openv':'Dice que está abierto a moverse',
@@ -531,7 +547,8 @@ function setLang(l){LANG=l;try{localStorage.setItem('altasala.lang',l)}catch(e){
 
 /* demo */
 function tab(n){document.querySelectorAll('.dtabs button').forEach((b,i)=>b.setAttribute('aria-selected',i===n));document.querySelectorAll('.pane').forEach((p,i)=>p.classList.toggle('on',i===n));if(n===1)run();if(n===2)contacting();document.getElementById('demo').scrollIntoView({behavior:'smooth',block:'start'})}
-function pinta(){document.getElementById('roles').innerHTML=ROLES.map(([r,,ic])=>`<button class="rb" aria-pressed="${ST.role===r}" onclick="pick('${r}')"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ic}</svg>${t('role.'+r)}<small>${t('rs.'+r)}</small></button>`).join('');
+function pinta(){document.getElementById('roles').innerHTML=ROLES.map(([r,rx,ic])=>{const ppl=r==='Any'?all():all().filter(p=>rx.test(p.r));const faces=ppl.filter(p=>p.ph).slice(0,4);const open=ppl.filter(p=>p.open).length;
+    return `<button class="rb" aria-pressed="${ST.role===r}" onclick="pick('${r}')"><div class="rbt"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ic}</svg><span class="chk"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l3 3L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><b>${t('role.'+r)}</b><small>${t('rs.'+r)}</small><div class="rbf"><span class="faces">${faces.map(p=>avHTML(p)).join('')}</span><span class="cnt2">${ppl.length} ${t('rb.n')}${open?` · ${open} ${t('rb.open')}`:''}</span></div></button>`}).join('');
   document.getElementById('venueBtn').innerHTML=ST.venue?`${t('v.set')} <b>${esc(ST.venue)}</b>`:t('v.unset');document.getElementById('clientName').textContent=ST.venue||t('v.default');
   ['Pay','Start','Roster'].forEach(k=>{document.getElementById('c'+k).value=ST[k.toLowerCase()]||''});
   const n=ST.yes.length;const c=document.getElementById('cnt3');c.hidden=!n;c.textContent=n}
