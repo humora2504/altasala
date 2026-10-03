@@ -36,9 +36,9 @@ select.lang{border:1px solid var(--line2);background:#fff;border-radius:8px;padd
 
 /* hero */
 .hero{padding-block:clamp(40px,6vw,80px) clamp(40px,6vw,72px)}
-.hero .g{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,64px);align-items:start}
-.hero h1{font-size:clamp(34px,4.6vw,60px)}
-@media(max-width:900px){.hero .g{grid-template-columns:1fr}}
+.hero .g{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(28px,4vw,56px);align-items:stretch}
+.hero h1{font-size:clamp(34px,5vw,70px)}
+@media(max-width:900px){.hero .g{grid-template-columns:1fr}.shot{aspect-ratio:4/4.6;height:auto}}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--fg2);margin-bottom:22px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 8px}
 .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
 .eyebrow b{color:var(--fg);font-weight:500}
@@ -48,7 +48,7 @@ select.lang{border:1px solid var(--line2);background:#fff;border-radius:8px;padd
 .hero .cta{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
 .proof{display:flex;flex-direction:column;gap:10px;margin-top:30px;font-size:16px}
 .proof div{display:flex;gap:11px;align-items:center}.proof svg{width:20px;height:20px;flex:none}.proof b{font-weight:600}
-.shot{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/4.6;background:#1a1a18 center/cover;box-shadow:0 40px 80px -40px rgba(0,0,0,.5)}
+.shot{position:relative;border-radius:20px;overflow:hidden;height:100%;min-height:460px;background:#1a1a18 center/cover;box-shadow:0 40px 80px -40px rgba(0,0,0,.5)}
 .shot::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.6) 72%)}
 .cc{position:absolute;left:18px;right:18px;bottom:18px;background:#fff;border-radius:14px;padding:14px;display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center;z-index:2;box-shadow:0 20px 40px -20px rgba(0,0,0,.4);animation:rise .8s .3s both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
@@ -360,7 +360,7 @@ let OWN=[];
 
 const I18N={
 en:{'nav.how':'What you get','nav.demo':'Live demo','nav.triage':'CV triage','nav.pricing':'Pricing','cta.main':'Try the demo','cta.how':'What you get','hero.eyebrow':'Hiring software, installed for',
- 'hero.h1a':'Your next','hero.h1b':'on your desk in 48 hours.',
+ 'hero.h1a':'Your next','hero.h1b':'on your desk<br>in 48 hours.',
  'hero.lede':'We find the people, confirm their experience across several tools, interview them ourselves and get them to accept your conditions. You get a short report and say yes or no to the interview. Nobody reaches you who is not qualified.',
  'p1':'<b>Not an agency, not a job board.</b> Software installed for your venue','p2':'<b>Unlimited hires.</b> Kitchen, floor, bar, wine, from entry to head of department','p3':'<b>We write, call and interview.</b> You only decide yes or no',
  'badge':'Confirmed this week','hc.ok':'Accepted your conditions','hc.sub':'Interview booked',
@@ -394,7 +394,7 @@ en:{'nav.how':'What you get','nav.demo':'Live demo','nav.triage':'CV triage','na
  'foot.src':'Profiles: public professional data, Melbourne, October 2026. CVs you drop never leave your browser.','foot.priv':'Candidate data for a client falls under the Australian Privacy Act 1988.','src.LinkedIn':'LinkedIn','src.Your database':'Your CVs',
  'rots':'head chef|sommelier|restaurant manager|bartender|sous chef|chef de partie|waiter|barista'},
 es:{'nav.how':'Qué consigues','nav.demo':'Demo en vivo','nav.triage':'Triaje de CV','nav.pricing':'Precios','cta.main':'Probar la demo','cta.how':'Qué consigues','hero.eyebrow':'Software de contratación, instalado para',
- 'hero.h1a':'Tu próximo','hero.h1b':'en tu mesa en 48 horas.',
+ 'hero.h1a':'Tu próximo','hero.h1b':'en tu mesa<br>en 48 horas.',
  'hero.lede':'Encontramos a la gente, confirmamos su experiencia cruzando varias herramientas, los entrevistamos nosotros y hacemos que acepten tus condiciones. Tú recibes un informe corto y dices sí o no a la entrevista. No te llega nadie que no esté cualificado.',
  'p1':'<b>Ni agencia ni portal.</b> Software instalado en tu local','p2':'<b>Contrataciones ilimitadas.</b> Cocina, sala, barra, bodega, desde base hasta jefe','p3':'<b>Escribimos, llamamos y entrevistamos.</b> Tú solo decides sí o no',
  'badge':'Confirmado esta semana','hc.ok':'Acepta tus condiciones','hc.sub':'Entrevista agendada',
@@ -483,7 +483,7 @@ function stages(){const top=POOL.filter(p=>p.ph).map(p=>({p,...score(p)})).sort(
   document.getElementById('bubB').textContent=fmt('bubB',c);
   document.getElementById('pipe').innerHTML=['k1','k2','k3','k4'].map(k=>`<span>${t(k)}</span>`).join('')}
 function applyI18n(){document.getElementById('lang').value=LANG;document.documentElement.lang=LANG;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');(/^p[123]$/.test(k))?el.innerHTML=t(k):el.textContent=t(k)});
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');(/^p[123]$|^hero\.h1b$/.test(k))?el.innerHTML=t(k):el.textContent=t(k)});
   document.querySelectorAll('[data-i18n-ph]').forEach(el=>{el.placeholder=t(el.getAttribute('data-i18n-ph'))});
   document.querySelectorAll('[data-brand]').forEach(el=>el.textContent=CONFIG.brand);
   document.getElementById('clientName').textContent=ST.venue||t('v.default');document.getElementById('badgeTxt').textContent=t('badge');
