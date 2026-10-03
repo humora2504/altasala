@@ -52,7 +52,8 @@ select.lang{border:1px solid var(--line2);background:#fff;border-radius:8px;padd
 .shot::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.6) 72%)}
 .cc{position:absolute;left:18px;right:18px;bottom:18px;background:#fff;border-radius:14px;padding:14px;display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center;z-index:2;box-shadow:0 20px 40px -20px rgba(0,0,0,.4);animation:rise .8s .3s both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.cc .nm{font-weight:600;font-size:16px}.cc .rl{color:var(--fg2);font-size:13.5px;display:flex;gap:8px;align-items:center;margin-top:3px;flex-wrap:wrap}
+.cc .nm{font-weight:600;font-size:16px}.cc .rl{color:var(--fg2);font-size:13.5px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc>div{min-width:0}
 .cc .st{display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right}
 .cc .st b{font-size:12px;color:var(--ok);font-weight:600;letter-spacing:.04em;text-transform:uppercase}.cc .st s{text-decoration:none;font-size:12px;color:var(--fg3)}
 .badge{position:absolute;top:18px;left:18px;z-index:2;background:rgba(255,255,255,.92);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:500;display:flex;gap:8px;align-items:center}
@@ -94,11 +95,11 @@ select.lang{border:1px solid var(--line2);background:#fff;border-radius:8px;padd
 @media(max-width:880px){.outs{grid-template-columns:1fr}}
 .oc{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
 .oc .top{padding:22px 22px 0}.oc h3{font-size:26px}.oc p{color:var(--fg2);margin-top:8px;font-size:15px}
-.stage{background:var(--sunk);margin:18px;border-radius:14px;height:300px;position:relative;overflow:hidden}
+.stage{background:var(--sunk);margin:18px;border-radius:14px;height:320px;position:relative;overflow:hidden}
 /* A: three photo cards slide in */
 .sa .pc{position:absolute;left:14px;right:14px;background:#fff;border-radius:12px;padding:10px 12px;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;opacity:0;animation:dropin 7s ease-in-out infinite;box-shadow:0 8px 20px -12px rgba(0,0,0,.25)}
-.sa .pc:nth-child(1){top:16px}.sa .pc:nth-child(2){top:110px;animation-delay:.5s}.sa .pc:nth-child(3){top:204px;animation-delay:1s}
-.sa .pc .av{width:44px;height:44px;font-size:14px}.sa .pc b{font-size:14px;display:block}.sa .pc s{text-decoration:none;font-size:12px;color:var(--fg2)}
+.sa .pc:nth-child(1){top:22px}.sa .pc:nth-child(2){top:122px;animation-delay:.5s}.sa .pc:nth-child(3){top:222px;animation-delay:1s}
+.sa .pc .av{width:44px;height:44px;font-size:14px}.sa .pc b{font-size:14px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sa .pc s{text-decoration:none;font-size:12px;color:var(--fg2);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sa .pc>div{min-width:0}
 .sa .pc em{font-style:normal;font-size:11px;color:var(--ok);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 @keyframes dropin{0%,8%{opacity:0;transform:translateX(30px)}16%,82%{opacity:1;transform:none}92%,100%{opacity:0;transform:translateX(-20px)}}
 /* B: swipe decision */
@@ -114,11 +115,12 @@ select.lang{border:1px solid var(--line2);background:#fff;border-radius:8px;padd
 @keyframes press{0%,24%{transform:none}28%{transform:scale(.9)}32%,100%{transform:none}}
 /* C: we contact them */
 .sc .bub{position:absolute;left:14px;right:40px;top:14px;background:#fff;border-radius:12px 12px 12px 4px;padding:10px 12px;font-size:13px;line-height:1.4;opacity:0;animation:bin 10s ease-in-out infinite}
-.sc .bub.r{left:40px;right:14px;top:112px;background:var(--ink);color:#fff;border-radius:12px 12px 4px 12px;animation-delay:2.4s}
+.sc .bub.r{left:40px;right:14px;top:auto;bottom:92px;background:var(--ink);color:#fff;border-radius:12px 12px 4px 12px;animation-delay:2.4s}
 .sc .bub .who{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3);display:block;margin-bottom:3px}.sc .bub.r .who{color:#a9a79e}
 @keyframes bin{0%,4%{opacity:0;transform:translateY(8px)}10%,88%{opacity:1;transform:none}94%,100%{opacity:0}}
-.sc .pipe{position:absolute;left:14px;right:14px;bottom:14px;display:flex;gap:6px;flex-wrap:wrap}
-.sc .pipe span{font-size:11px;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line2);border-radius:999px;padding:5px 10px;color:var(--fg3);background:#fff;opacity:.6;animation:pon 10s ease-in-out infinite}
+.stage.sc{height:370px}
+.sc .pipe{position:absolute;left:14px;right:14px;bottom:14px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.sc .pipe span{font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line2);border-radius:999px;padding:5px 10px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--fg3);background:#fff;opacity:.6;animation:pon 10s ease-in-out infinite}
 .sc .pipe span:nth-child(2){animation-delay:1.2s}.sc .pipe span:nth-child(3){animation-delay:4.2s}.sc .pipe span:nth-child(4){animation-delay:6.4s}
 @keyframes pon{0%,10%{background:#fff;color:var(--fg3);opacity:.6}16%,88%{background:var(--ok);border-color:var(--ok);color:#fff;opacity:1}94%,100%{background:#fff;color:var(--fg3);opacity:.6}}
 
@@ -371,7 +373,7 @@ en:{'nav.how':'What you get','nav.demo':'Live demo','nav.triage':'CV triage','na
  'o2.h':'You decide with one tap','o2.p':'Interview or pass. That is the whole job on your side. No profiles to read, no CVs to open.',
  'o3.h':'We contact them for you','o3.p':'We write to them, call them, confirm they are available and that they accept your pay, roster and start date. Then we book the interview.',
  'sa.ok':'Confirmed','sb.y':'Interview','sb.n':'Pass',
- 'bubA':'Hi {first}, we work with {venue}. They are looking for a {role} and your time at {cur} stood out. Pay {pay}, {roster}, start {start}. Would you take a call this week?','bubB':'Yes, that works for me. I can start {start}. Happy to talk Thursday.',
+ 'bubA':'Hi {first}, we work with {venue}. They need a {role} and your time at {cur} stood out. {pay}, {roster}, start {start}. Up for a call this week?','bubB':'Yes, that works for me. I can start {start}. Happy to talk Thursday.',
  'k1':'We wrote','k2':'Available','k3':'Accepted conditions','k4':'Interview booked',
  'demo.h2':'This is what we install in your venue.','demo.lede':'Real Melbourne profiles. Three screens. Try it.',
  'tab1':'What do you need','tab2':'Your shortlist','tab3':"We're contacting them",
@@ -405,7 +407,7 @@ es:{'nav.how':'Qué consigues','nav.demo':'Demo en vivo','nav.triage':'Triaje de
  'o2.h':'Decides con un toque','o2.p':'Entrevista o paso. Ese es todo tu trabajo. Sin perfiles que leer ni CV que abrir.',
  'o3.h':'Los contactamos por ti','o3.p':'Les escribimos, les llamamos, confirmamos que están disponibles y que aceptan tu sueldo, tu cuadrante y tu fecha. Luego agendamos la entrevista.',
  'sa.ok':'Confirmado','sb.y':'Entrevista','sb.n':'Paso',
- 'bubA':'Hola {first}, trabajamos con {venue}. Buscan {role} y tu etapa en {cur} nos ha llamado la atención. Sueldo {pay}, {roster}, inicio {start}. ¿Te viene bien una llamada esta semana?','bubB':'Sí, me encaja. Puedo empezar {start}. El jueves me va bien.',
+ 'bubA':'Hola {first}, trabajamos con {venue}. Buscan {role} y tu etapa en {cur} nos ha llamado la atención. {pay}, {roster}, inicio {start}. ¿Hablamos esta semana?','bubB':'Sí, me encaja. Puedo empezar {start}. El jueves me va bien.',
  'k1':'Escrito','k2':'Disponible','k3':'Acepta condiciones','k4':'Entrevista agendada',
  'demo.h2':'Esto es lo que instalamos en tu local.','demo.lede':'Perfiles reales de Melbourne. Tres pantallas. Pruébalo.',
  'tab1':'Qué necesitas','tab2':'Tu lista','tab3':'Los estamos contactando',
@@ -434,7 +436,7 @@ try{const s=localStorage.getItem('altasala5');if(s)ST=Object.assign(ST,JSON.pars
 const save=()=>{try{localStorage.setItem('altasala5',JSON.stringify(ST))}catch(e){}};
 const all=()=>POOL.concat(OWN);const byId=i=>all().find(p=>p.i===i);
 const venueName=()=>ST.venue||(LANG==='es'?'un local del CBD':'a venue in the CBD');
-const cond=()=>({pay:ST.pay||(LANG==='es'?'según convenio y experiencia':'award plus experience'),start:ST.start||(LANG==='es'?'en tres semanas':'within three weeks'),roster:ST.roster||(LANG==='es'?'cinco días':'five days')});
+const cond=()=>({pay:ST.pay||(LANG==='es'?'Sueldo según convenio y experiencia':'Award rate plus experience'),start:ST.start||(LANG==='es'?'en tres semanas':'within three weeks'),roster:ST.roster||(LANG==='es'?'cinco días':'five days')});
 
 /* avatars + logos */
 const PAL=['#e9e4d8','#dfe6e1','#e6dfe0','#dde3ea','#ece6d4','#d9e6de','#e6dce9','#ece0d8'];
@@ -468,7 +470,7 @@ function rotate(){const words=t('rots').split('|');const el=document.getElementB
   (function step(){const word=words[w];el.textContent=word.slice(0,i);
     if(!del&&i<word.length){i++;rotT=setTimeout(step,70)}else if(!del){del=true;rotT=setTimeout(step,1700)}else if(i>0){i--;rotT=setTimeout(step,35)}else{del=false;w=(w+1)%words.length;rotT=setTimeout(step,250)}})()}
 function heroCard(){const c=POOL.filter(p=>p.ph&&p.a==='Kitchen'&&/head chef|executive/i.test(p.r)).map(p=>({p,...score(p)})).sort((a,b)=>b.s-a.s)[0]||{p:POOL[0]};const p=c.p;
-  document.getElementById('heroCard').innerHTML=`${avHTML(p,'')}<div><div class="nm">${esc(p.n)}</div><div class="rl">${esc(p.r)} · ${logoHTML(p.v)} ${esc(p.v)}</div></div><div class="st"><b>${t('hc.ok')}</b><s>${t('hc.sub')}</s></div>`;
+  document.getElementById('heroCard').innerHTML=`${avHTML(p,'')}<div><div class="nm">${esc(p.n)}</div><div class="rl">${esc(p.r)} · ${esc(p.v)}</div></div><div class="st"><b>${t('hc.ok')}</b><s>${t('hc.sub')}</s></div>`;
   document.getElementById('shot').style.backgroundImage=`url('${STOCK[0]}')`}
 function venues(){const cnt={},ppl={};POOL.forEach(p=>{const k=p.v.replace(/\s*[|·].*$/,'').trim();cnt[k]=(cnt[k]||0)+1;(ppl[k]=ppl[k]||[]).push(p)});
   const list=Object.entries(cnt).filter(([v])=>v&&!/between roles|fine dining group/i.test(v)&&(TOPRX.test(v)||cnt[v]>=3)).sort((a,b)=>b[1]-a[1]).slice(0,6);
@@ -497,7 +499,7 @@ function pinta(){document.getElementById('roles').innerHTML=ROLES.map(([r,,ic])=
 function pick(r){ST.role=r;save();pinta();if(r!=='Any'){setTimeout(()=>tab(1),350)}else{tab(1);document.getElementById('q').focus()}}
 function roleLabel(){return t('role.'+ST.role).toLowerCase()}
 function run(){const q=(document.getElementById('q').value||'').toLowerCase().trim();const rx=ROLES.find(x=>x[0]===ST.role);
-  let r=all().filter(p=>!ST.no.includes(p.i)&&!ST.yes.includes(p.i)).filter(p=>{if(rx&&!rx[1].test(p.r))return false;if(q&&!(p.n+' '+p.r+' '+p.v+' '+p.note+' '+p.vt+' '+p.s).toLowerCase().includes(q))return false;return true}).map(p=>({p,...score(p)})).sort((a,b)=>b.s-a.s);
+  let r=all().filter(p=>!ST.no.includes(p.i)&&!ST.yes.includes(p.i)).filter(p=>{if(rx&&!rx[1].test(p.r))return false;if(q&&!(p.n+' '+p.r+' '+p.v+' '+p.note+' '+p.vt+' '+p.s).toLowerCase().includes(q))return false;return true}).map(p=>({p,...score(p)})).sort((a,b)=>(b.s+(b.p.ph?8:0))-(a.s+(a.p.ph?8:0)));
   const top=r.slice(0,3),rest=r.slice(3);
   document.getElementById('t3h').textContent=t('d.top3');document.getElementById('t3s').textContent=fmt('d.top3s',{role:ST.role==='Any'?(q||'…'):roleLabel()});
   document.getElementById('top3').innerHTML=top.length?top.map(({p,why})=>`<div class="tc" id="tc${p.i}">
